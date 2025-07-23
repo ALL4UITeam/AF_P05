@@ -1,0 +1,857 @@
+<!-- 분석 시뮬레이션 리스트 -->
+<section class="viewer-app__panel panel--analysist " data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel__header__inner">
+                <h2 class="header__title">분석 시뮬레이션</h2>
+                <button class="header__close-btn" aria-label="패널 닫기">
+                    <img src="./assets/images/header/panel-colse.png" alt="닫기버튼 이미지" />
+                </button>
+            </div>
+            <p class="header__intro">
+                다양한 해양환경을 3차원 형태로 가시화하여 해양정보에 대한 시뮬레이션 및 분석을 할 수 있습니다.
+            </p>
+        </header>
+        <div class="panel--cont analysis__list" data-simplebar>
+            <div class="menu-card-list">
+                <div role="button" class="menu-card">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">조간대 분석</h3>
+                        <p class="menu-card__desc">
+                            조석예보 정보를 활용하여 고조 및 저조를 시각화합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </div>
+
+                <div class="menu-card" role="button">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">선박 연안 접근 가능구역 분석</h3>
+                        <p class="menu-card__desc">
+                            선박(용도, 톤수)별 연안접근 가능 구역을 시각화합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </div>
+                <div class="menu-card" role="button">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">해안침수 예상도 분석</h3>
+                        <p class="menu-card__desc">
+                            빈도별 해안침수 예상도 및 태풍 시나리오를 시각화합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </div>
+                <div class="menu-card" role="button">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">저지도 영역 분석</h3>
+                        <p class="menu-card__desc">
+                            선택한 조위에 따른 해수면의 침수 구역을 시각화 합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </div>
+                <div class="menu-card" role="button">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">수위 예측선 분석</h3>
+                        <p class="menu-card__desc">
+                            조시차와 조고비를 반영한 예측 수위를  시각화 하여 표현합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </div>
+                <div class="menu-card" role="button">
+                    <div class="menu-card__body">
+                        <h3 class="menu-card__title">준설량 계산 시뮬레이션</h3>
+                        <p class="menu-card__desc">
+                            수심유지가 필요한 항만청 등에서 준설 전 시뮬레이션을 통해서 준설량을 시각화하여 제공합니다.
+                        </p>
+                    </div>
+                    <span class="menu-card__arrow" aria-hidden="true">
+                    </span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 조간대 분석 //-->
+<section class="viewer-app__panel panel--analysis" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>조간대 분석</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    조석예보 정보를 활용하여 고조 및<br>저조를 시각화합니다.
+                </p>
+            </div>
+        </header>
+        <!-- // panel__header -->
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">고조 분석
+                    <div class="switch-item">
+                        <label class="switch">
+                            <input type="checkbox" aria-label="고조 분석 스위치" class="analysis-switch">
+                            <span class="switch__slider"></span>
+                        </label>
+                    </div>
+                </h3>
+
+                <div class="simul-settings analysis-settings">
+                    <div class="simul-settings__item">
+                        <h4>일시설정</h4>
+                        <div class="simul-row">
+                            <div class="select-area">
+                                <select name="" id="" class="form-select" title="일시 선택">
+                                    <option value="1">2025-06-25 01:04:00</option>
+                                </select>
+                            </div>
+                            <div class="unit-area">
+                                <input type="text" class="form-input" value="100" title="수위 값 입력">
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simul-settings__item">
+                        <h4>투명도 설정 <em>(범위: 0.1 - 1.0)</em></h4>
+                        <div class="simul-row">
+                            <div class="slide_range">
+                                <input type="range"  value="0.5" title="투명도 조절">
+                                <span class="value">0.5</span>
+                            </div>
+                            <div class="color-picker">
+                                <input type="color" value="#CA43BD" title="투명도 색상 선택">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //simul-settings -->
+            </div>
+            <!-- // 고조 분석 -->
+
+            <div class="panel--cont__item">
+                <h3 class="panel--cont__item__ti">저조 분석
+                    <div class="switch-item">
+                        <label class="switch">
+                            <input type="checkbox" aria-label="저조 분석 스위치" class="analysis-switch">
+                            <span class="switch__slider"></span>
+                        </label>
+                    </div>
+                </h3>
+
+                <div class="simul-settings analysis-settings">
+                    <div class="simul-settings__item">
+                        <h4>일시설정</h4>
+                        <div class="simul-row">
+                            <div class="select-area">
+                                <select name="" id="" class="form-select" title="일시 선택">
+                                    <option value="1">2025-06-25 01:04:00</option>
+                                </select>
+                            </div>
+                            <div class="unit-area">
+                                <input type="text" class="form-input" value="100" title="수위 값 입력">
+                                <span class="unit">cm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simul-settings__item">
+                        <h4>투명도 설정 <em>(범위: 0.1 - 1.0)</em></h4>
+                        <div class="simul-row">
+                            <div class="slide_range">
+                                <input type="range"  value="0.5" title="투명도 조절">
+                                <span class="value">0.5</span>
+                            </div>
+                            <div class="color-picker">
+                                <input type="color" value="#CA43BD" title="투명도 색상 선택">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //simul-settings -->
+            </div>
+            <!-- //저조 분석 -->
+
+
+        </div>
+        <!-- //panel--cont -->
+    </div>
+</section>
+<!--// 조간대 분석 -->
+
+<!-- 선박연안접근 가능구역 분석 //-->
+<section class="viewer-app__panel panel--analysis" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>선박연안접근 가능구역 분석</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    선박(용도,톤수)별 연안접근 가능 구역을 시각화합니다.
+                </p>
+            </div>
+        </header>
+        <!-- // panel__header -->
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">대상 선박</h3>
+
+                <div class="simul-settings">
+                    <div class="simul-settings__item">
+                        <h4>선박 용도</h4>
+                        <div class="simul-row">
+                            <div class="input-full">
+                                <select name="" id="" class="form-select" title="선박 용도 선택">
+                                    <option value="">선택</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="simul-settings__item">
+                        <h4>선박 톤수</h4>
+                        <div class="simul-row">
+                            <div class="input-full">
+                                <select name="" id="" class="form-select" title="선박 톤수 선택">
+                                    <option value="">선택</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //simul-settings -->
+            </div>
+            <!-- // 대상 선박 -->
+
+            <div class="panel--cont__item">
+                <h3 class="panel--cont__item__ti">선박연안접근 가능구역 분석
+                    <div class="switch-item">
+                        <label class="switch">
+                            <input type="checkbox" aria-label="선박연안접근 가능구역 분석 스위치" class="analysis-switch">
+                            <span class="switch__slider"></span>
+                        </label>
+                    </div>
+                </h3>
+
+                <div class="simul-settings analysis-settings">
+                    <div class="simul-settings__item">
+                        <div class="observation-etc">
+                            <div class="observation-etc__list">
+                                <dl class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>해상접근 한계 수심</dt>
+                                    <dd><span class="observation-etc__value">171</span> <span class="observation-etc__unit">m 이상</span></dd>
+                                </dl>
+                                <dl class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>선저여유 수심</dt>
+                                    <dd><span class="observation-etc__value">41155.3</span> <span class="observation-etc__unit">m</span></dd>
+                                </dl>
+                                <dl class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>만재흘수</dt>
+                                    <dd><span class="observation-etc__value">19.3</span> <span class="observation-etc__unit">m</span></dd>
+                                </dl>
+                                <dl class="observation-etc__item">
+                                    <dt><span class="observation-etc__dot" aria-hidden="true"></span>만재흘수 <br>(사용자 지정)</dt>
+                                    <dd>
+                                        <strong class="sr-only">만재흘수 사용자 지정 체크박스</strong>
+                                        <input type="checkbox" class="observation-etc__checkbox" title="만재흘수 사용자 지정 체크박스">
+                                        <input class="observation-etc__value inp" type="text" value="1009.7" title="만재흘수 사용자 지정 값 입력"> <span class="observation-etc__unit">m</span>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //simul-settings -->
+            </div>
+            <!-- //선박연안접근 가능구역 분석 -->
+
+
+        </div>
+        <!-- //panel--cont -->
+    </div>
+</section>
+<!-- //선박연안접근 가능구역 분석 -->
+
+<!-- 해안침수예상도 분석 // -->
+<section class="viewer-app__panel panel--analysis is-active" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>해안침수예상도 분석</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    빈도별 해안침수예상도 및 태풍시나리오를 <br>시각화합니다.
+                </p>
+            </div>
+        </header>
+        <!-- // panel__header -->
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">분석 예상 조위</h3>
+                <div class="simul-settings">
+                    <div class="simul-settings__item">
+                        <div class="simul-settings analysis-settings">
+                            <div class="simul-settings__item">
+                                <h4>빈도 설정</h4>
+                                <div class="simul-row">
+                                    <select name="" id="" class="form-select" title="빈도 선택">
+                                        <option value="">선택</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="simul-settings__item">
+                                <h4>투명도 설정</h4>
+                                <div class="simul-row">
+                                    <div class="slide_range">
+                                        <input type="range"  value="0.5" title="투명도 조절">
+                                        <span class="value">0.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="simul-settings__item vertical">
+                                <h4>최대수위</h4>
+                                <div class="simul-row">
+                                    <div class="switch-item">
+                                        <label class="switch">
+                                            <input type="checkbox" aria-label="최대수위 스위치">
+                                            <span class="switch__slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">침수 시뮬레이션</h3>
+                <div class="simul-settings">
+                    <div class="simul-settings__item">
+                        <h4>조위값 임의 적용(m)</h4>
+                        <div class="simul-row flxwrap">
+                            <div class="slide_range">
+                                <input type="range" value="0.5" title="투명도 조절">
+                                <span class="value">0.5</span>
+                            </div>
+                            <div class="slide_control">
+                                <button type="button" class="control-btn play active" title="재생"><i></i></button>
+                                <button type="button" class="control-btn pause" title="일시정지"><i></i></button>
+                                <button type="button" class="control-btn stop" title="정지"><i></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">침수심 구분</h3>
+
+                <div class="simul-legend">
+                    <ul class="flood-legend-list">
+                        <li><span class="flood-legend-color flood-legend-color1"></span>3.0m 이상</li>
+                        <li><span class="flood-legend-color flood-legend-color2"></span>2.0m ~ 3.0m 미만</li>
+                        <li><span class="flood-legend-color flood-legend-color3"></span>1.5m ~ 2.0m 미만</li>
+                        <li><span class="flood-legend-color flood-legend-color4"></span>1.0m ~ 1.5m 미만</li>
+                        <li><span class="flood-legend-color flood-legend-color5"></span>0.5m ~ 1.0m 미만</li>
+                        <li><span class="flood-legend-color flood-legend-color6"></span>0.5m 미만</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">태풍 영향 분석</h3>
+                <div class="simul-settings">
+                    
+                    <div class="observation-etc">
+                        <div class="observation-etc__list">
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>일시</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>태풍과의 거리</dt>
+                                <dd>- km</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>중심위치</dt>
+                                <dd>-°N -°E</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>진행방향</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>중심기압</dt>
+                                <dd>- hPa</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>강풍반경</dt>
+                                <dd>- km</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>최대풍속</dt>
+                                <dd>- km/h</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>강도</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>이동속도</dt>
+                                <dd>- km/h</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>크기</dt>
+                                <dd>-</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>파고/파주기</dt>
+                                <dd>- m / - sec</dd>
+                            </dl>
+                            <dl class="observation-etc__item">
+                                <dt><span class="observation-etc__dot" aria-hidden="true"></span>조위</dt>
+                                <dd>- cm</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                
+                    <div class="simul-settings__item space">
+                        <h4>태풍명</h4>
+                        <div class="simul-typhoon">
+                            <select name="" id="" class="form-select" title="태풍명 선택">
+                                <option value="">선택</option>
+                            </select>
+                            <div class="typhoon-control">
+                                <button type="button" class="control-btn play active" title="재생"><i></i></button>
+                                <button type="button" class="control-btn pause" title="일시정지"><i></i></button>
+                                <button type="button" class="control-btn stop" title="정지"><i></i></button>
+                            </div>
+
+                            <div class="typhoon-preview">
+                                태풍영역
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- //panel--cont -->
+    </div>
+</section>
+<!-- //해안침수예상도 분석 -->
+
+<!-- 저지대영역 분석 //-->
+<section class="viewer-app__panel panel--analysis" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>저지대영역 분석</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    선택한 조위에 따른 해수면의 침수 구역을 시각화 합니다.
+                </p>
+            </div>
+        </header>
+        <!-- // panel__header -->
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">분석 예상 조위
+                    <div class="switch-item">
+                        <label class="switch">
+                            <input type="checkbox" aria-label="분석 예상 조위 스위치" class="analysis-switch">
+                            <span class="switch__slider"></span>
+                        </label>
+                    </div>
+                </h3>
+
+                <div class="simul-settings">
+                    <div class="simul-settings__item">
+                        <div class="simul-settings analysis-settings">
+                            <div class="simul-settings__item">
+                                <h4>분석 예상 조위 (단위 : ㎝)</h4>
+                                <div class="simul-row">
+                                    <div class="slide_range">
+                                        <input type="range"  value="0.5" title="분석 예상 조위 조절">
+                                        <span class="value">0.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //simul-settings -->
+            </div>
+            <!-- // 분석 예상 조위 -->
+            <div class="panel--cont__item">
+                <h3 class="panel--cont__item__ti">투명도 설정
+                    <div class="switch-item">
+                        <label class="switch">
+                            <input type="checkbox" aria-label="투명도 설정 스위치" class="analysis-switch">
+                            <span class="switch__slider"></span>
+                        </label>
+                    </div>
+                </h3>
+
+                <div class="simul-settings">
+                    <div class="simul-settings__item">
+                        <div class="simul-settings analysis-settings">
+                            <div class="simul-settings__item">
+                                <h4>설정 범위 (0.1 ~ 1.0)</h4>
+                                <div class="simul-row">
+                                    <div class="slide_range">
+                                        <input type="range"  value="0.5" title="투명도 조절">
+                                        <span class="value">0.5</span>
+                                    </div>
+                                    <div class="color-picker">
+                                        <input type="color" value="#CA43BD" title="투명도 색상 선택">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- //simul-settings -->
+            </div>
+            <!-- // 투명도 설정  -->
+
+
+        </div>
+        <!-- //panel--cont -->
+    </div>
+</section>
+ <!-- //저지대영역 분석 -->
+
+<!-- 수위예측선 분석 -->
+<section class="viewer-app__panel panel--analysis" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>수위예측선 분석</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    조시차와 조고비를 반영한 예측 수위를<br>시각화 하여 표현합니다.
+                </p>
+            </div>
+        </header>
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">기타 관측 정보</h3>
+
+                <div class="legend-box" aria-labelledby="legendTitle">
+                    <div class="legend-box__header">
+                        <h3 class="legend-box__title" id="legendTitle">수위 예측선 범례</h3>
+                        <span class="legend-box__unit">(기준 : 수위)</span>
+                    </div>
+                    <div class="legend-box__range">
+                        <div class="legend-box__item legend-box__item--danger" aria-label="위험: 100cm 이상">
+                            <span class="legend-box__label">위험</span>
+                            <span class="legend-box__desc">100cm 이상</span>
+                        </div>
+                        <div class="legend-box__item legend-box__item--warning" aria-label="보통: 70cm 이상">
+                            <span class="legend-box__label">보통</span>
+                            <span class="legend-box__desc">70cm 이상</span>
+                        </div>
+                        <div class="legend-box__item legend-box__item--safe" aria-label="안전: 70cm 미만">
+                            <span class="legend-box__label">안전</span>
+                            <span class="legend-box__desc">70cm 미만</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="observation-form" aria-labelledby="formTitle">
+                    <fieldset class="form-fieldset">
+                        <div class="form-group">
+                            <label class="form-label" for="obsDate">관측 일자</label>
+                            <input type="date" class="form-input" id="obsDate" name="obsDate" autocomplete="off"
+                                aria-describedby="dateFormatDesc" required>
+                            <span id="dateFormatDesc" class="sr-only">
+                                날짜를 선택하거나 입력하세요. 예시: 2025-06-25
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="data">관측시간</label>
+                            <div class="flex">
+                                <select class="form-select" id="dataTimeHour" name="dataTimehour" required
+                                    aria-required="true" title="시간 선택">
+                                    <option value="busan">14시</option>
+                                </select>
+                                <select class="form-select" id="dataTimeMinute" name="dataTimeminute" required
+                                    aria-required="true" title="분 선택">
+                                    <option value="busan">25분</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="form-submit">수위 예측 지점 선택</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <ul class="guide-list">
+                    <li>수위 예측 지점을 지도상에서 클릭하세요.</li>
+                    <li>지점을 선택하면 해당 위치 기반의 수위 예측선을 표출합니다.</li>
+                </ul>
+                
+            </div>
+
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">시뮬레이션</h3>
+                <div class="simul--section">
+                    <div style="height: 160px;">
+                        차트영역
+                    </div>
+                    <div class="simul-option">
+                        <button class="play-btn" aria-label="재생"></button>
+                        <label for="customRange" class="sr-only">값 조절 슬라이더</label>
+                        <input type="range" min="0" max="100" value="35" class="custom-slider" id="customRange"
+                            aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-label="값 조절 슬라이더">
+                        <span class="interval">간격 : 10분</span>
+                    </div>
+                </div>
+                <ul class="guide-list">
+                    <li>수위 변화를 시간 흐름에 따라 표현합니다.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 준설량 계산 시뮬레이션 -->
+<section class="viewer-app__panel panel--analysis" data-panel="analysis">
+    <div class="viewer-app__panel__inner">
+        <header class="panel__header mbb">
+            <div class="panel--analysis__head">
+                <div class="panel--analysis__head__inner">
+                    <h2>준설량 계산 시뮬레이션</h2>
+                    <button class="header__close-btn" aria-label="패널 닫기">
+                        <img src="./assets/images/header/panel-colse02.png" alt="닫기버튼 이미지" />
+                    </button>
+                </div>
+                <p class="header--analysis__intro">
+                    수심 유지가 필요한 지역에 대해서 준설 전 준설량 모의 계산을 지원합니다.
+                </p>
+            </div>
+        </header>
+        <div class="panel--cont analysis" data-simplebar>
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">준설량 모의 계산</h3>
+
+                <div  class="step-section" aria-labelledby="stepTitle1">
+                    <h3 class="step-section__title" id="stepTitle1">
+                        <span class="step-section__number">01.</span>
+                        측량 성과 업로드
+                    </h3>
+                    <div class="step-section__content">
+                        <div class="step-dropzone" tabindex="0" aria-label="파일 첨부 영역. 파일을 끌어다 놓거나 업로드 버튼을 이용하세요.">
+                            <p class="step-dropzone__desc">
+                                첨부할 파일을 여기에 끌어다 놓거나.<br>
+                                파일 업로드 버튼을 직접 선택해 주세요.
+                            </p>
+                            <label class="step-dropzone__btn" for="fileInput1">
+                                측량 성과 파일 업로드
+                                <input type="file" id="fileInput1" class="sr-only" aria-label="측량 성과 파일 업로드" multiple>
+                            </label>
+                        </div>
+                        <!-- 파일 리스트 표출 영역 -->
+                        <ul class="step-filelist" id="fileList1" aria-live="polite" aria-label="업로드된 파일 목록">
+                            <!-- 동적 표출 -->
+                            <!-- 예시:
+                            <li class="step-filelist__item">
+                                <span class="step-filelist__name">result-20240630.csv</span>
+                                <button type="button" class="step-filelist__remove" aria-label="파일 삭제">×</button>
+                            </li>
+                            -->
+                        </ul>
+                        <ul class="guide-list">
+                            <li>준설 전 측량자료가 있는 경우 업로드하세요. 없다면 24년 4월 측량된 자료를 기반으로 준설량을 계산합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="step-section" aria-labelledby="stepTitle2">
+                    <h3 class="step-section__title" id="stepTitle2">
+                        <span class="step-section__number">02.</span>
+                        측량 성과 업로드
+                    </h3>
+                    <div class="tab-group" role="tablist" aria-label="준설 영역 설정 선택">
+                        <button type="button" class="tab-group__tab tab-group__tab--selected" role="tab" aria-selected="true" aria-controls="tab-panel-upload01" id="uploadTab01" tabindex="0">파일 업로드</button>
+                        <button type="button" class="tab-group__tab" role="tab" aria-selected="false" aria-controls="tab-panel-upload02" id="uploadTab02" tabindex="-1">영역 직접 선택</button>
+                    </div>
+                    <div id="tab-panel-upload01" role="tabpanel" aria-labelledby="uploadTab01">
+                        <div class="step-section__content">
+                            <div class="step-dropzone" tabindex="0" aria-label="파일 첨부 영역. 파일을 끌어다 놓거나 업로드 버튼을 이용하세요.">
+                                <p class="step-dropzone__desc">
+                                    첨부할 파일을 여기에 끌어다 놓거나.<br>
+                                    파일 업로드 버튼을 직접 선택해 주세요.
+                                </p>
+                                <label class="step-dropzone__btn" for="fileInput2">
+                                    준설 영역 파일 업로드
+                                    <input type="file" id="fileInput2" class="sr-only" aria-label="준설 영역 파일 업로드" multiple>
+                                </label>
+                            </div>
+                            <!-- 파일 리스트 표출 영역 -->
+                            <ul class="step-filelist" id="fileList2" aria-live="polite" aria-label="업로드된 파일 목록">
+                                <!-- 동적 표출 -->
+                                <!-- 예시:
+                                <li class="step-filelist__item">
+                                    <span class="step-filelist__name">result-20240630.csv</span>
+                                    <button type="button" class="step-filelist__remove" aria-label="파일 삭제">×</button>
+                                </li>
+                                -->
+                            </ul>
+                            <ul class="guide-list">
+                                <li>파일은 SHP 파일 형식을 지원합니다.</li>
+                                <li>업로드 용량은 50Mb 이하만 가능합니다.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="tab-panel-upload02" role="tabpanel" aria-labelledby="uploadTab02">
+                        <div class="step-dropzone self">
+                            <h4><i></i>영역 직접 선택하기</h4>
+                            <p class="step-dropzone__desc">
+                                지도에서 영역을 직접 클릭하여<br>
+                                다각형 영역을 선택해주세요.
+                            </p>
+                            <button class="step-dropzone__btn">
+                                직접 영역 선택하기
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-section" aria-labelledby="stepTitle2">
+                    <h3 class="step-section__title" id="stepTitle2">
+                        <span class="step-section__number">03.</span>
+                        유지 수심 (단위 m)
+                    </h3>
+                    <form class="calc-form" autocomplete="off" onsubmit="return false;">
+                        <input type="number" class="form-input calc-input" placeholder="값을 입력하세요" aria-label="준설량" value="10" required>
+                        <div class="form-submit-wrap">
+                            <button type="submit" class="form-submit">조회 하기</button>
+                        </div>
+                    </form>
+                    <ul class="guide-list">
+                        <li>준설량 계산에는 시간이 소요됩니다.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel--cont__item mbb">
+                <h3 class="panel--cont__item__ti">준설량 모의 계산</h3>
+                <div class="observation-etc">
+                    <div class="observation-etc__list">
+                        <dl class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>면적</dt>
+                            <dd><span class="observation-etc__value">152</span> <span class="observation-etc__unit">㎡</span></dd>
+                        </dl>
+                        <dl class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>최고 높이</dt>
+                            <dd><span class="observation-etc__value">10</span> <span class="observation-etc__unit">m</span></dd>
+                        </dl>
+                        <dl class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>최저 높이</dt>
+                            <dd><span class="observation-etc__value">2</span> <span class="observation-etc__unit">m</span></dd>
+                        </dl>
+                        <dl class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>평균 높이</dt>
+                            <dd><span class="observation-etc__value">8</span> <span class="observation-etc__unit">m</span></dd>
+                        </dl>
+                        <dl class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>준설 평균 깊이</dt>
+                            <dd><span class="observation-etc__value">5</span> <span class="observation-etc__unit">m</span></dd>
+                        </dl>
+                        <dl class="observation-etc__item">
+                            <dt><span class="observation-etc__dot" aria-hidden="true"></span>준설량</dt>
+                            <dd><span class="observation-etc__value">241</span> <span class="observation-etc__unit">㎥</span></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+// 분석 스위치 제어 스크립트 (클래스 기반)
+document.addEventListener('DOMContentLoaded', function() {
+    // 모든 분석 스위치와 설정 영역을 자동으로 찾아서 연결
+    function initializeAnalysisSwitches() {
+        // 모든 분석 스위치 찾기
+        const analysisSwitches = document.querySelectorAll('.analysis-switch');
+        
+        analysisSwitches.forEach(switchElement => {
+            // 각 스위치의 부모 panel--cont__item을 찾기
+            const switchContainer = switchElement.closest('.panel--cont__item');
+            
+            // 같은 컨테이너 내의 analysis-settings 찾기
+            const settingsElement = switchContainer.querySelector('.analysis-settings');
+            
+            if (settingsElement) {
+                // 초기 상태 설정
+                toggleSettingsState(switchElement, settingsElement);
+                
+                // 이벤트 리스너 추가
+                switchElement.addEventListener('change', function() {
+                    toggleSettingsState(this, settingsElement);
+                });
+            }
+        });
+    }
+    
+    // 설정 영역의 활성화/비활성화 토글 함수
+    function toggleSettingsState(switchElement, settingsElement) {
+        const inputs = settingsElement.querySelectorAll('input, select');
+        const isEnabled = switchElement.checked;
+        
+        inputs.forEach(input => {
+            input.disabled = !isEnabled;
+            
+            // disabled 상태에 따른 시각적 피드백
+            if (!isEnabled) {
+                input.style.opacity = '0.5';
+                input.style.cursor = 'not-allowed';
+            } else {
+                input.style.opacity = '1';
+                input.style.cursor = 'auto';
+            }
+        });
+        
+        // 설정 영역 전체의 시각적 피드백
+        if (!isEnabled) {
+            settingsElement.style.opacity = '0.6';
+        } else {
+            settingsElement.style.opacity = '1';
+        }
+    }
+    
+    // 초기화 실행
+    initializeAnalysisSwitches();
+});
+</script>
+
+
