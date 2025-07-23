@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>3차원 해양공간 정보</title>
+
+
+	<!-- Pretendard 웹폰트 (jsDelivr) -->
+	<!-- 모든 굵기를 포함한 Pretendard -->
+
+	<!-- <link rel="stylesheet" href="./assets/fonts/pretendard.css" /> -->
+	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" />
+
+	<link rel="stylesheet" href="./lib/simplebar/simplebar.css">
+	<script src="./lib/simplebar/simplebar.min.js"></script>
+</head>
+
+<body>
+	<div class="viewer-app">
+		<a href="#main-content" class="skip-link">본문 바로가기</a>
+
+
+		<!-- 패널 영역 -->
+		<div id="main-content" class="viewer-app__panels">
+			<!-- 사이드바 -->
+			{{> side}}
+
+			<!-- 뷰어 홈 패널 -->
+			{{> panel-home}}
+
+			<!-- 레이어 패널 -->
+			{{> panel-layer}}
+
+			<!-- 해양관측 패널 -->
+			{{> panel-observe}}
+
+			<!-- 분석/시뮬레이션 패널 -->
+			{{> panel-analysis}}
+
+			<button class="panel__toggle"><i class="icon-arrow"></i></button>
+		</div>
+		<!-- // 패널 -->
+
+		<!-- 지도 영역 -->
+		<div class="map-area">
+			<!-- 지도 출력 -->
+			<div id="map"></div>
+			<!-- // 지도 출력 -->
+
+			<!-- 지도 컨트롤 -->
+			{{> map-control}}
+		</div>
+		<!-- // 지도 영역 -->
+
+		<!-- utils -->
+		<div class="poiPopup" id="poiPopup" style="left: 1014px; top: 97px;">
+			<div class="head">
+				<span class="tit fontBd ft18">등대</span>
+				<i class="ico_close"
+					onclick="$('#poiPopup').removeClass('on');$('#poiPopup').css('display','none');measureEntityRemoveById('undefined')"></i>
+			</div>
+			<div class="con">
+				<div class="poiPopup_data">
+					<div class="data1">
+						<span class="tit">객체명</span>
+						<span class="txt">수영만어항 동방파제 (Suyeongman eo Hang)</span>
+					</div>
+				</div>
+				<div class="poiPopup_data">
+					<div class="data1">
+						<span class="tit">종류</span>
+						<span class="txt">탑(Tower)</span>
+					</div>
+				</div>
+				<div class="poiPopup_data">
+					<div class="data1">
+						<span class="tit">색상</span>
+						<span class="txt">빨간색(red)</span>
+					</div>
+				</div>
+				<div class="poiPopup_data">
+					<div class="data1">
+						<span class="tit">위치 위도</span>
+						<span class="txt">35˚9'41.60"</span>
+					</div>
+				</div>
+				<div class="poiPopup_data">
+					<div class="data1">
+						<span class="tit">위치 경도</span>
+						<span class="txt">129˚8'5.70"</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	
+	<script type="module" src="./js/main.js"></script>
+</body>
+</html>

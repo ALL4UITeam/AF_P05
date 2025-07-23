@@ -1,0 +1,160 @@
+.svg-icon{
+    forced-color-adjust: none;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center center;
+    -webkit-mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center center;
+    mask-size: contain;
+    display: inline-flex;
+    transition: all .5s;
+}
+// 아이콘 mixin 정의
+@mixin icon-style($icon-url, $width: 2.7rem, $height: 2.7rem) {
+    -webkit-mask-image: url($icon-url);
+    mask-image: url($icon-url);
+    width: $width;
+    height: $height;
+}
+
+.ico-guide{
+    @include icon-style('@/assets/images/icon/ico-guide.svg', 24px, 24px);
+    background-color: #196DFF;
+}
+.ico-zoom-in{
+    @include icon-style('@/assets/images/icon/ico-zoom-in.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-zoom-out{
+    @include icon-style('@/assets/images/icon/ico-zoom-out.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-distance{
+    @include icon-style('@/assets/images/icon/ico-distance.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-area{
+    @include icon-style('@/assets/images/icon/ico-area.svg', 24px, 24px);
+    background-color: #555555;
+}
+
+.ico-height{
+    @include icon-style('@/assets/images/icon/ico-height.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-area2{
+    @include icon-style('@/assets/images/icon/ico-area2.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-measurement{
+    @include icon-style('@/assets/images/icon/ico-measurement.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-sea1{
+    @include icon-style('@/assets/images/icon/ico-sea1.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-sea2{
+    @include icon-style('@/assets/images/icon/ico-sea2.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-tide{
+    @include icon-style('@/assets/images/icon/ico-tide.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-coordinate{
+    @include icon-style('@/assets/images/icon/ico-coordinate.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-screen-save{
+    @include icon-style('@/assets/images/icon/ico-screen-save.svg', 24px, 24px);
+    background-color: #555555;
+}
+.ico-print{
+    @include icon-style('@/assets/images/icon/ico-print.svg', 24px, 24px);
+    background-color: #555555;
+}
+
+.ico-arrow{
+    @include icon-style('@/assets/images/icon/ico-arrow.svg', 24px, 24px);
+    background-color: #C6C6C6;
+}
+.ico-info{
+    @include icon-style('@/assets/images/icon/ico-info.svg', 14px, 14px);
+    background-color: #C6C6C6;
+}
+
+$layer-icons-a: (
+    '01', '01_on','02', '02_on'
+);
+$layer-icons-b: (
+    '01', '01_on'
+);
+
+$layer-icons-c: (
+  '01', '01_on', '02', '02_on', '03', '03_on', '04', '04_on',
+  '05', '05_on', '06', '06_on', '07', '07_on', '07_2', '07_2_on',
+  '08', '08_on', '08_2', '08_2_on', '09', '09_on', '10','10_on',
+  '11','11_on','12','12_on'
+);
+
+$layer-icons-d: (
+  '01', '01_on', '02', '02_on', '03', '03_on'
+);
+
+$layer-icons-e: (
+  '01', '01_on', '02', '02_on', '03', '03_on'
+);
+$layer-icons-f: (
+  '01', '01_on', '02', '02_on'
+);
+
+$layer-icons-g: (
+  '01', '01_on'
+);
+
+
+@each $name in $layer-icons-a {
+  .ico-layer-a-#{$name} {
+    @include icon-style('@/assets/images/icon/ico_layer_a_#{$name}.svg', 32px, 32px);
+  }
+}
+
+
+@each $name in $layer-icons-b {
+    .ico-layer-b-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_b_#{$name}.svg', 32px, 32px);
+    }
+  }
+
+  
+  @each $name in $layer-icons-c {
+    .ico-layer-c-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_c_#{$name}.svg', 32px, 32px);
+    }
+  }
+  
+
+  @each $name in $layer-icons-d {
+    .ico-layer-d-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_d_#{$name}.svg', 32px, 32px);
+    }
+  }
+  
+  @each $name in $layer-icons-e {
+    .ico-layer-e-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_e_#{$name}.svg', 32px, 32px);
+    }
+  }
+
+  @each $name in $layer-icons-f {
+    .ico-layer-f-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_f_#{$name}.svg', 32px, 32px);
+    }
+  }
+
+  @each $name in $layer-icons-g {
+    .ico-layer-g-#{$name} {
+      @include icon-style('@/assets/images/icon/ico_layer_g_#{$name}.svg', 32px, 32px);
+    }
+  }
