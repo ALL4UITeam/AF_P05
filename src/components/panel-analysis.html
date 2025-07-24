@@ -278,8 +278,6 @@
                 <!-- //simul-settings -->
             </div>
             <!-- //선박연안접근 가능구역 분석 -->
-
-
         </div>
         <!-- //panel--cont -->
     </div>
@@ -287,7 +285,7 @@
 <!-- //선박연안접근 가능구역 분석 -->
 
 <!-- 해안침수예상도 분석 // -->
-<section class="viewer-app__panel panel--analysis is-active" data-panel="analysis">
+<section class="viewer-app__panel panel--analysis" data-panel="analysis">
     <div class="viewer-app__panel__inner">
         <header class="panel__header mbb">
             <div class="panel--analysis__head">
@@ -326,14 +324,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="simul-settings__item vertical">
-                                <h4>최대수위</h4>
-                                <div class="simul-row">
-                                    <div class="switch-item">
-                                        <label class="switch">
-                                            <input type="checkbox" aria-label="최대수위 스위치">
-                                            <span class="switch__slider"></span>
-                                        </label>
+                            <div class="simul-settings__item">
+                                <div class="flex-space">
+                                    <h4>최대수위</h4>
+                                    <div class="simul-row">
+                                        <div class="switch-item">
+                                            <label class="switch">
+                                                <input type="checkbox" aria-label="최대수위 스위치">
+                                                <span class="switch__slider"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="simul-legend">
+                                    
+                                    <div class="flood-legend-list">
+                                        <div class="flex-space simul-legend__head">
+                                            <h5>해안침수예상도 범례</h5>
+                                            <span>(기준 : 침수심)</span>
+                                        </div>
+                                        <ul>
+                                            <li><span class="flood-legend-color flood-legend-color1"></span>3.0m 이상</li>
+                                            <li><span class="flood-legend-color flood-legend-color2"></span>2.0m ~ 3.0m 미만</li>
+                                            <li><span class="flood-legend-color flood-legend-color3"></span>1.5m ~ 2.0m 미만</li>
+                                            <li><span class="flood-legend-color flood-legend-color4"></span>1.0m ~ 1.5m 미만</li>
+                                            <li><span class="flood-legend-color flood-legend-color5"></span>0.5m ~ 1.0m 미만</li>
+                                            <li><span class="flood-legend-color flood-legend-color6"></span>0.5m 미만</li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -342,7 +359,14 @@
                 </div>
             </div>
             <div class="panel--cont__item mbb">
-                <h3 class="panel--cont__item__ti">침수 시뮬레이션</h3>
+                <div class="flex-space-ti">
+                    <h3 class="panel--cont__item__ti">침수 시뮬레이션</h3>
+                    <div class="slide_control">
+                        <button type="button" class="control-btn play active" title="재생"><i></i></button>
+                        <button type="button" class="control-btn pause" title="일시정지"><i></i></button>
+                        <button type="button" class="control-btn stop" title="정지"><i></i></button>
+                    </div>
+                </div>
                 <div class="simul-settings">
                     <div class="simul-settings__item">
                         <h4>조위값 임의 적용(m)</h4>
@@ -351,27 +375,8 @@
                                 <input type="range" value="0.5" title="투명도 조절">
                                 <span class="value">0.5</span>
                             </div>
-                            <div class="slide_control">
-                                <button type="button" class="control-btn play active" title="재생"><i></i></button>
-                                <button type="button" class="control-btn pause" title="일시정지"><i></i></button>
-                                <button type="button" class="control-btn stop" title="정지"><i></i></button>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="panel--cont__item mbb">
-                <h3 class="panel--cont__item__ti">침수심 구분</h3>
-
-                <div class="simul-legend">
-                    <ul class="flood-legend-list">
-                        <li><span class="flood-legend-color flood-legend-color1"></span>3.0m 이상</li>
-                        <li><span class="flood-legend-color flood-legend-color2"></span>2.0m ~ 3.0m 미만</li>
-                        <li><span class="flood-legend-color flood-legend-color3"></span>1.5m ~ 2.0m 미만</li>
-                        <li><span class="flood-legend-color flood-legend-color4"></span>1.0m ~ 1.5m 미만</li>
-                        <li><span class="flood-legend-color flood-legend-color5"></span>0.5m ~ 1.0m 미만</li>
-                        <li><span class="flood-legend-color flood-legend-color6"></span>0.5m 미만</li>
-                    </ul>
                 </div>
             </div>
             <div class="panel--cont__item mbb">
@@ -545,7 +550,7 @@
  <!-- //저지대영역 분석 -->
 
 <!-- 수위예측선 분석 -->
-<section class="viewer-app__panel panel--analysis" data-panel="analysis">
+<section class="viewer-app__panel panel--analysis is-active" data-panel="analysis">
     <div class="viewer-app__panel__inner">
         <header class="panel__header mbb">
             <div class="panel--analysis__head">
@@ -622,7 +627,14 @@
             </div>
 
             <div class="panel--cont__item mbb">
-                <h3 class="panel--cont__item__ti">시뮬레이션</h3>
+                <div class="flex-space-ti"> 
+                    <h3 class="panel--cont__item__ti">시뮬레이션</h3>
+                    <div class="slide_control">
+                        <button type="button" class="control-btn play active" title="재생"><i></i></button>
+                        <button type="button" class="control-btn pause" title="일시정지"><i></i></button>
+                        <button type="button" class="control-btn stop" title="정지"><i></i></button>
+                    </div>
+                </div>
                 <div class="simul--section">
                     <div style="height: 160px;">
                         차트영역
@@ -633,6 +645,17 @@
                         <input type="range" min="0" max="100" value="35" class="custom-slider" id="customRange"
                             aria-valuemin="0" aria-valuemax="100" aria-valuenow="35" aria-label="값 조절 슬라이더">
                         <span class="interval">간격 : 10분</span>
+                    </div>
+                </div>
+                <div class="flex-space">
+                    <h4>수심</h4>
+                    <div class="simul-row">
+                        <div class="switch-item">
+                            <label class="switch">
+                                <input type="checkbox" aria-label="수심 스위치">
+                                <span class="switch__slider"></span>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <ul class="guide-list">
