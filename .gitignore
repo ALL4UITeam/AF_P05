@@ -1,8 +1,8 @@
 # node_modules: 패키지 라이브러리
 node_modules/
 
-# 빌드 결과물
-dist/
+# 빌드 결과물 dist/
+
 build/
 
 # OS/IDE 관련 파일
