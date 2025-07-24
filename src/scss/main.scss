@@ -1631,3 +1631,71 @@ body{
         }
     }
 }
+
+
+
+.pagenation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    .page-navi{
+        display: flex;
+        align-items: center;
+        gap: 0 5px;
+        &.disabled{
+            opacity: .5;
+            cursor: not-allowed;
+        }
+        &.prev{
+            &::before{
+                display: inline-block;
+                content: '';
+                width: 9px;
+                height: 16px;
+                background: url('@/assets/images/icon/ico-paging-prev.png') no-repeat center center / contain;
+            }
+        }
+        &.next{
+            &::after{
+                display: inline-block;
+                content: '';
+                width: 9px;
+                height: 16px;
+                background: url('@/assets/images/icon/ico-paging-next.png') no-repeat center center / contain;
+            }
+        }
+    }
+}
+.page-links{
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+    justify-content: center;
+    
+    .page-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        width: 35px;
+        height: 35px;
+        border-radius: 4px;
+        transition: all .3s;
+        background-color: #fff;
+        font-size: 14px;
+        color: #555;
+        &:hover,
+        &:focus{
+            background-color: #f1f1f1;
+        }
+        &.active{
+            background-color: #000;
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+    .link-dot{
+        height: auto;
+    }
+}
