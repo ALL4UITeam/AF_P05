@@ -4,14 +4,11 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>3차원 해양공간 정보</title>
-
-
-	<!-- Pretendard 웹폰트 (jsDelivr) -->
-	<!-- 모든 굵기를 포함한 Pretendard -->
-
-	<!-- <link rel="stylesheet" href="./assets/fonts/pretendard.css" /> -->
-	<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" />
-
+	<link rel="stylesheet" as="style" crossorigin
+		href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
 	<link rel="stylesheet" href="./lib/simplebar/simplebar.css">
 	<script src="./lib/simplebar/simplebar.min.js"></script>
 </head>
@@ -94,9 +91,121 @@
 			</div>
 		</div>
 
+
+		
+		
 	</div>
 
-	
+	<!-- 도움말 표출 2개 -->
+	<div class="help-popup" style="left:50%;top:50%;transform:translate(-50%,-50%)">
+		<div class="help-popup__content">
+			<button type="button" class="close" aria-label="닫기">
+				<i class="ico_close" aria-hidden="true"></i>
+			</button>
+			<div class="text-box">
+
+				<div class="text-box__content">
+					<p>
+						최근, 유래 없는 폭염으로 물놀이, 해양레포츠 등을 즐기기 위해 해수욕장을 찾는 국민들이 급속도로 증가함에 따라 연안에 대한 국민들의 관심과 함께 해양 안전사고의
+						위험성이 지속적으로 높아져 왔다.
+						특히, 바다 속은 육상과 달리 눈으로 볼 수 없어 갑자기 깊어지는 곳 등 위험 지역을 알기가 힘들고, 그 때문에 위험성을 인식하기도 어려워 사고로 이어지는 경우가
+						많았다.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="help-popup" style="left:50%;top:0">
+		<div class="help-popup__content">
+			<div class="text-box">
+				<div class="text-box__title">
+					<strong>국립해양조사원(박경철)은 국민들이 안전하게 연안해역(해수욕장, 갯벌 등)을 이용할 수 있도록 하기 위해 누구나 알기 쉬운 ‘해양 안전지도’(가칭)를 만든다고
+						밝혔다.</strong>
+				</div>
+				<div class="text-box__content">zXCV
+					<p>
+						최근, 유래 없는 폭염으로 물놀이, 해양레포츠 등을 즐기기 위해 해수욕장을 찾는 국민들이 급속도로 증가함에 따라 연안에 대한 국민들의 관심과 함께 해양 안전사고의
+						위험성이 지속적으로 높아져 왔다.
+						특히, 바다 속은 육상과 달리 눈으로 볼 수 없어 갑자기 깊어지는 곳 등 위험 지역을 알기가 힘들고, 그 때문에 위험성을 인식하기도 어려워 사고로 이어지는 경우가
+						많았다.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="dialog" title="단면측정">
+		<div class="dialog-text">
+			단면측정 그래프
+			최근, 유래 없는 폭염으로 물놀이, 해양레포츠 등을 즐기기 위해 해수욕장을 찾는 국민들이 급속도로 증가함에 따라 연안에 대한 국민들의 관심과 함께 해양 안전사고의 위험성이 지속적으로 높아져
+			왔다. 특히, 바다 속은 육상과 달리 눈으로 볼 수 없어 갑자기 깊어지는 곳 등 위험 지역을 알기가 힘들고, 그 때문에 위험성을 인식하기도 어려워 사고로 이어지는 경우가 많았다.
+		</div>
+	</div>
+
+	<div class="poiPopup" id="poiPopup" style="left: 1014px; top: 97px;width:450px">
+			<div class="head">
+				<span class="tit fontBd ft18">좌표 선택</span>
+				<i class="ico_close" onclick="$('#poiPopup').removeClass('on');$('#poiPopup').css('display','none');measureEntityRemoveById('undefined')"></i>
+			</div>
+			<div class="con">
+				<div class="tab-section">
+					<div class="tab-group" role="tablist" aria-label="관측소 또는 관측부이 선택">
+						<button type="button" class="tab-group__tab tab-group__tab--selected" role="tab" aria-selected="true" aria-controls="tab-panel-info01" id="infoTab01" tabindex="0">조위관측소</button>
+						<button type="button" class="tab-group__tab" role="tab" aria-selected="false" aria-controls="tab-panel-info02" id="infoTab02" tabindex="-1">해양관측부이</button>
+					</div>
+
+					<div id="tab-panel-info01" role="tabpanel" aria-labelledby="infoTab01">
+						<div class="grid-input">
+							<div class="grid-input-item">
+								<strong>위도</strong>
+								<div class="grid-input-group">
+									<input type="text" class="form-input" placeholder="위도" title="위도">
+								</div>
+							</div>
+							<div class="grid-input-item">
+								<strong>경도</strong>
+								<div class="grid-input-group">
+									<input type="text" class="form-input" placeholder="경도" title="경도">
+								</div>
+							</div>
+							<div class="grid-input-item">
+								<strong>위도(DMS)</strong>
+								<div class="grid-input-group">
+									<input type="text" class="form-input" placeholder="위도" title="위도">
+									<span class="unit">N</span>
+								</div>
+							</div>
+							<div class="grid-input-item">
+								<strong>경도(DMS)</strong>
+								<div class="grid-input-group">
+									<input type="text" class="form-input" placeholder="경도" title="경도">
+									<span class="unit">E</span>
+								</div>
+							</div>
+						</div>
+						<div class="action-fab">
+							<button class="btn secondary">초기화</button>
+							<button class="btn primary">측정</button>
+						</div>
+					</div>
+					<div id="tab-panel-info02" role="tabpanel" aria-labelledby="infoTab02" hidden="">
+						222
+					</div>
+				</div>
+			</div>
+		</div>
+
 	<script type="module" src="./js/main.js"></script>
+	<script>
+		$(function () {
+			// $("#dialog").dialog({
+			// 	width: 600,
+			// 	height: 300,
+			// });
+		});
+	</script>
 </body>
+
 </html>

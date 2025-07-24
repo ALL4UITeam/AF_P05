@@ -678,7 +678,27 @@ body {
         border-bottom: 1px solid #D8D8D8;
         gap: 0 8px;
         position: relative;
+        &.all-checked{
+            .label-checkbox{
+                i{
 
+                    background-color: #196DFF;
+                    &::before{
+                        opacity: 1;
+                        transform: rotate(45deg);
+                    }
+                    &::after{
+                        background-color: #fff;
+                        width: 2px;
+                        height: 10px;
+                        top: 3px;
+                        left: 9px;
+                        transform-origin: bottom;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
         .label-checkbox {
             display: flex;
             align-items: center;
@@ -712,7 +732,17 @@ body {
                 border: 1px solid #D8D8D8;
                 border-radius: 4px;
                 position: relative;
-
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 2px;
+                    height: 9px;
+                    background-color: #fff;
+                    top: 4px;
+                    left: 8px;
+                    transform-origin: bottom;
+                    opacity: 0;
+                }
                 &::after {
                     content: '';
                     position: absolute;
@@ -1404,5 +1434,200 @@ body {
         display: flex;
         align-items: baseline;
         gap:0 8px;
+    }
+}
+
+/* 오승준 추가 */
+.help-popup{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.2);
+    backdrop-filter: blur(2px);
+    
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    max-width: 500px;
+    .close{
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        background: none;
+        border: none;
+        
+        background-color: #fff;
+        i{
+            display: block;
+            width: 12px;
+            height: 11px;
+            background: url(/assets/images/header/ico-close-1.png) no-repeat center;
+            cursor: pointer;
+        }
+    }
+    &__content{
+        position: relative;
+        padding: 25px 35px;
+        &:has(.close){
+            padding-right: 50px;
+        }
+        .text-box{
+            &__title{
+                font-size: 16px;
+                font-weight: 600;
+                color: #222;
+                padding-bottom: 20px;
+                line-height: 1.4;
+                display: flex;
+                gap: 10px;
+                &::before{
+                    flex-shrink: 0;
+                    content: '!';
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 22px;
+                    height: 22px;
+                    background-color: #196DFF;
+                    border-radius: 50%;
+                    color: #fff;
+                }
+            }
+            &__content{
+                font-size: 15px;
+                color: #333;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+.ui-front{
+    z-index: 1000;
+}
+.ui-dialog{
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+}
+.ui-widget-header{
+    border: 0;
+    background: transparent;
+    padding: 24px 24px 16px 24px !important;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.ui-widget.ui-widget-content{
+    border: 0;
+
+}
+.ui-dialog .ui-dialog-content{
+    padding: 0 24px 24px;
+}
+body{
+    .ui-widget .ui-widget{
+        font-size: 0;
+    }
+    .ui-dialog .ui-dialog-titlebar-close{
+        right: 20px;
+    }
+    .ui-button{
+        border: 0;
+        background: none;
+        
+        &:hover{
+            border: 0;
+            background: none;
+            .ui-icon{
+                width: 12px;
+                height: 11px;
+                background: url(/assets/images/header/ico-close-1.png) no-repeat center;
+                cursor: pointer;
+            }
+        }
+    }
+    .ui-button .ui-icon{
+        display: block;
+        width: 12px;
+        height: 11px;
+        background: url(/assets/images/header/ico-close-1.png) no-repeat center;
+        cursor: pointer;
+        
+    }
+}
+.dialog-text{
+    line-height: 1.34;
+    font-size: 15px;
+    color: #333;   
+}
+
+.grid-input{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap:1rem;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 10px;
+    &-item{
+        display: flex;
+        flex-direction: column;
+        gap:5px;
+        strong{
+            display: block;
+            font-size: 15px;
+            font-weight: 500;
+            color: #222;
+        }
+        .grid-input-group{
+            display: flex;
+            align-items: center;
+            gap:0 2px;
+        }
+        .form-input{
+            flex:1 1 auto;
+        }
+        .unit{
+            flex-shrink: 0;
+            font-size: 14px;
+            color: #555;
+            margin-left: 5px;
+        }
+    }
+}
+.action-fab{
+    display: flex;
+    gap:0 8px;
+    margin-top: 15px;
+    .btn{
+        
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 50%;
+        height: 45px;
+        border-style: solid;
+        cursor: pointer;
+        white-space: nowrap;
+        border-width: 1px;
+        font-weight: 500;
+        
+        &.primary{
+            background-color: #256ef4;
+            border-color: #256ef4;
+            color: #ffffff;
+        }
+        &.secondary{
+            background-color: #ecf2fe;
+            border-color: #256ef4;
+            color: #0b50d0;
+        }
     }
 }

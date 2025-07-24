@@ -5,6 +5,7 @@ import '@/scss/main.scss';
 
         const accordions = document.querySelectorAll('.accordion');
     
+        
         accordions.forEach(accordion => {
             const header = accordion.querySelector('.accordion__header');
             const arrow = accordion.querySelector('.accordion__arrow');
@@ -36,6 +37,8 @@ import '@/scss/main.scss';
                     }
                 });
             }
+            
+           
         });
         
         const navList = document.querySelector('.nav__list');
