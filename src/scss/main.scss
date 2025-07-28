@@ -686,15 +686,34 @@ body {
                     &::before{
                         opacity: 1;
                         transform: rotate(45deg);
+                        height: 8px;
+                        top: 4px;
+                        left: 7px;
                     }
                     &::after{
                         background-color: #fff;
                         width: 2px;
-                        height: 10px;
-                        top: 3px;
-                        left: 9px;
+                        height: 8px;
+                        top: 4px;
+                        left: 8px;
                         transform-origin: bottom;
                         transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+        &:not(.all-checked){
+            .label-checkbox{
+                input{
+                    &:checked {
+                        &+i {
+                            background-color: #196DFF;
+                            border-color: #196DFF;
+    
+                            &::after {
+                                width: 10px;
+                            }
+                        }
                     }
                 }
             }
@@ -711,17 +730,7 @@ body {
                 height: 100%;
                 opacity: 0;
                 cursor: pointer;
-
-                &:checked {
-                    &+i {
-                        background-color: #196DFF;
-                        border-color: #196DFF;
-
-                        &::after {
-                            width: 10px;
-                        }
-                    }
-                }
+                
             }
 
             i {
