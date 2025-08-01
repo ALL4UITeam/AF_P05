@@ -1,4 +1,4 @@
-<section class="viewer-app__panel panel--observe" data-panel="observe">
+<section class="viewer-app__panel panel--observe is-active" data-panel="observe">
     <div class="viewer-app__panel__inner">
         <header class="panel__header mbb">
             <div class="panel__header__inner">
@@ -68,109 +68,134 @@
             <!-- 카드 - 관측소 관측부이 선택 -->
             <div class="panel--cont__item mbb">
                 <h3 class="panel--cont__item__ti">관측소 / 관측부이 선택</h3>
-                <div class="observation-card" role="group" aria-labelledby="observationTitle01">
-                    <div class="observation-card__head">
-                        <button type="button" class="observation-card__check-btn" aria-pressed="true"
-                            aria-controls="observationContent01" id="observationCheck" tabindex="0">
-                            <!-- 체크 아이콘 (활성 시 파란색) -->
-                            <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
-                                <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <span class="sr-only">관측 활성화</span>
-                        </button>
-                        <span class="observation-card__title" id="observationTitle01"><b>관측</b></span>
-                    </div>
-                    <div class="observation-card__content" id="observationContent01">
-                        <div class="observation-card__item">
-                            <label class="observation-card__radio-label">
-                                <input type="radio" name="timeSelect" class="observation-card__radio"
-                                    aria-label="관측 시간 직접 선택" disabled>
-                                <span class="observation-card__radio-custom"></span>
-                            </label>
-                            <span class="observation-card__time-input" aria-label="관측 시간: 15시 30분">
-                                <span class="observation-card__icon" aria-hidden="true"></span>
-                                <span class="observation-card__time-text">15:30</span>
-                            </span>
-                            <span class="observation-card__value" aria-label="값">105</span>
+                <div class="observation-card__flex">
+                    <div class="observation-card__select">
+                        <div class="observation-card" role="group" aria-labelledby="observationTitle01">
+                            <div class="observation-card__head">
+                                <button type="button" class="observation-card__check-btn" aria-pressed="true"
+                                    aria-controls="observationContent01" id="observationCheck" tabindex="0">
+                                    <!-- 체크 아이콘 (활성 시 파란색) -->
+                                    <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
+                                        <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="sr-only">관측 활성화</span>
+                                </button>
+                                <span class="observation-card__title" id="observationTitle01"><b>관측</b></span>
+                            </div>
+                            <div class="observation-card__content" id="observationContent01">
+                                <div class="observation-card__item">
+                                    <label class="observation-card__radio-label">
+                                        <input type="radio" name="timeSelect" class="observation-card__radio"
+                                            aria-label="관측 시간 직접 선택" disabled>
+                                        <span class="observation-card__radio-custom"></span>
+                                    </label>
+                                    <span class="observation-card__time-input" aria-label="관측 시간: 15시 30분">
+                                        <span class="observation-card__icon" aria-hidden="true"></span>
+                                        <span class="observation-card__time-text">15:30</span>
+                                    </span>
+                                    <span class="observation-card__value" aria-label="값">105</span>
+                                </div>
+                                <div class="observation-card__item">
+                                    <label class="observation-card__radio-label">
+                                        <input type="radio" name="timeSelect" class="observation-card__radio"
+                                            aria-label="관측 시간 직접 선택" disabled>
+                                        <span class="observation-card__radio-custom"></span>
+                                    </label>
+                                    <span class="observation-card__time-input" aria-label="관측 시간: 15시 30분">
+                                        <span class="observation-card__icon" aria-hidden="true"></span>
+                                        <span class="observation-card__time-text">15:30</span>
+                                    </span>
+                                    <span class="observation-card__value" aria-label="값">105</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="observation-card__item">
-                            <label class="observation-card__radio-label">
-                                <input type="radio" name="timeSelect" class="observation-card__radio"
-                                    aria-label="관측 시간 직접 선택" disabled>
-                                <span class="observation-card__radio-custom"></span>
-                            </label>
-                            <span class="observation-card__time-input" aria-label="관측 시간: 15시 30분">
-                                <span class="observation-card__icon" aria-hidden="true"></span>
-                                <span class="observation-card__time-text">15:30</span>
-                            </span>
-                            <span class="observation-card__value" aria-label="값">105</span>
+                        <div class="observation-card" role="group" aria-labelledby="observationTitle02">
+                            <div class="observation-card__head">
+                                <button type="button" class="observation-card__check-btn" aria-pressed="true"
+                                    aria-controls="observationContent02" id="observationCheck" tabindex="0">
+                                    <!-- 체크 아이콘 (활성 시 파란색) -->
+                                    <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
+                                        <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="sr-only">예측 활성화</span>
+                                </button>
+                                <span class="observation-card__title" id="observationTitle02"><b>예측</b></span>
+                            </div>
+                            <div class="observation-card__content" id="observationContent01">
+                                <div class="observation-card__item">
+                                    <label class="observation-card__radio-label">
+                                        <input type="radio" name="timeSelect" class="observation-card__radio"
+                                            aria-label="예측 시간 직접 선택" disabled>
+                                        <span class="observation-card__radio-custom"></span>
+                                    </label>
+                                    <span class="observation-card__time-input" aria-label="예측 시간: 15시 30분">
+                                        <span class="observation-card__icon" aria-hidden="true"></span>
+                                        <span class="observation-card__time-text">15:30</span>
+                                    </span>
+                                    <span class="observation-card__high" aria-label="고">고</span>
+                                    <span class="observation-card__value" aria-label="값">105</span>
+                                </div>
+                                <div class="observation-card__item">
+                                    <label class="observation-card__radio-label">
+                                        <input type="radio" name="timeSelect" class="observation-card__radio"
+                                            aria-label="예측 시간 직접 선택" disabled>
+                                        <span class="observation-card__radio-custom"></span>
+                                    </label>
+                                    <span class="observation-card__time-input" aria-label="예측 시간: 15시 30분">
+                                        <span class="observation-card__icon" aria-hidden="true"></span>
+                                        <span class="observation-card__time-text">15:30</span>
+                                    </span>
+                                    <span class="observation-card__low" aria-label="저">저</span>
+                                    <span class="observation-card__value" aria-label="값">105</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="observation-card" role="group" aria-labelledby="observationTitle02">
+                            <div class="observation-card__head">
+                                <button type="button" class="observation-card__check-btn" aria-pressed="true"
+                                    aria-controls="observationContent02" id="observationCheck" tabindex="0">
+                                    <!-- 체크 아이콘 (활성 시 파란색) -->
+                                    <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
+                                        <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="sr-only">임의 활성화</span>
+                                </button>
+                                <span class="observation-card__title" id="observationTitle02"><b>임의</b></span>
+                            </div>
+                            <div class="observation-card__content" id="observationContent01">
+                                <div class="observation-card__item">
+                                    <label class="observation-card__radio-label">
+                                        <input type="radio" name="timeSelect" class="observation-card__radio"
+                                            aria-label="임의 조위값 선택" disabled>
+                                        <span class="observation-card__radio-custom"></span>
+                                    </label>
+                                    <input type="text" class="form-input m0" placeholder="임의 조위값을 입력하세요">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="observation-card" role="group" aria-labelledby="observationTitle02">
-                    <div class="observation-card__head">
-                        <button type="button" class="observation-card__check-btn" aria-pressed="true"
-                            aria-controls="observationContent02" id="observationCheck" tabindex="0">
-                            <!-- 체크 아이콘 (활성 시 파란색) -->
-                            <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
-                                <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <span class="sr-only">예측 활성화</span>
-                        </button>
-                        <span class="observation-card__title" id="observationTitle02"><b>예측</b></span>
-                    </div>
-                    <div class="observation-card__content" id="observationContent01">
-                        <div class="observation-card__item">
-                            <label class="observation-card__radio-label">
-                                <input type="radio" name="timeSelect" class="observation-card__radio"
-                                    aria-label="예측 시간 직접 선택" disabled>
-                                <span class="observation-card__radio-custom"></span>
-                            </label>
-                            <span class="observation-card__time-input" aria-label="예측 시간: 15시 30분">
-                                <span class="observation-card__icon" aria-hidden="true"></span>
-                                <span class="observation-card__time-text">15:30</span>
-                            </span>
-                            <span class="observation-card__high" aria-label="고">고</span>
-                            <span class="observation-card__value" aria-label="값">105</span>
+                    <div class="wave-range">
+                        <!-- 액체 -->
+                        <div class="wave-range__bg" aria-hidden="true">
+                            <div class="wave-range__liquid" id="liquid">
+                                <img src="./assets/images/panel/pointer_on.gif" alt="">
+                            </div>
                         </div>
-                        <div class="observation-card__item">
-                            <label class="observation-card__radio-label">
-                                <input type="radio" name="timeSelect" class="observation-card__radio"
-                                    aria-label="예측 시간 직접 선택" disabled>
-                                <span class="observation-card__radio-custom"></span>
-                            </label>
-                            <span class="observation-card__time-input" aria-label="예측 시간: 15시 30분">
-                                <span class="observation-card__icon" aria-hidden="true"></span>
-                                <span class="observation-card__time-text">15:30</span>
-                            </span>
-                            <span class="observation-card__low" aria-label="저">저</span>
-                            <span class="observation-card__value" aria-label="값">105</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="observation-card" role="group" aria-labelledby="observationTitle02">
-                    <div class="observation-card__head">
-                        <button type="button" class="observation-card__check-btn" aria-pressed="true"
-                            aria-controls="observationContent02" id="observationCheck" tabindex="0">
-                            <!-- 체크 아이콘 (활성 시 파란색) -->
-                            <svg class="observation-card__check-icon" width="24" height="24" aria-hidden="true">
-                                <polyline points="5,13 11,19 20,7" stroke="#1877ff" stroke-width="3" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                            <span class="sr-only">임의 활성화</span>
-                        </button>
-                        <span class="observation-card__title" id="observationTitle02"><b>임의</b></span>
-                    </div>
-                    <div class="observation-card__content" id="observationContent01">
-                        <div class="observation-card__item">
-                            <label class="observation-card__radio-label">
-                                <input type="radio" name="timeSelect" class="observation-card__radio"
-                                    aria-label="임의 조위값 선택" disabled>
-                                <span class="observation-card__radio-custom"></span>
-                            </label>
-                            <input type="text" class="form-input m0" placeholder="임의 조위값을 입력하세요">
+                        
+                        
+
+                        <!-- 슬라이더 (투명) -->
+                        <input type="range" role="slider" min="-999" max="1000" value="0" aria-label="물 높이 조절" class="wave-range__slider"
+                            oninput="updateLiquid(this.value)" />
+
+                        <!-- 라벨 -->
+                        <div class="wave-range__labels">
+                            <span class="wave-range__label wave-range__label--top">1,000</span>
+                            <span class="wave-range__label wave-range__label--center">0</span>
+                            <span class="wave-range__label wave-range__label--bottom">-1,000</span>
                         </div>
                     </div>
                 </div>
@@ -227,7 +252,7 @@
                                     <dt><span class="observation-etc__dot" aria-hidden="true"></span>수온</dt>
                                     <dd><span class="observation-etc__value">-</span> <span
                                             class="observation-etc__unit">℃</span></dd>
-                                </d>
+                                </dl>
                                 <dl class="observation-etc__item">
                                     <dt><span class="observation-etc__dot" aria-hidden="true"></span>염분</dt>
                                     <dd><span class="observation-etc__value">-</span> <span
@@ -244,3 +269,13 @@
         </div>
     </div>
 </section>
+
+
+<script>
+    function updateLiquid(value) {
+        const percentage = (Number(value) + 1000) / 2000 * 100;
+        document.getElementById("liquid").style.height = `${percentage}%`;
+    }
+
+    updateLiquid(0);
+</script>

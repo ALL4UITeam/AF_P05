@@ -96,6 +96,13 @@ $color-muted: #666;
     align-items: flex-start;
     position: relative;
     transition: box-shadow .2s, background .2s, border-color .2s, color .2s;
+    &__flex{
+        display: flex;
+        gap:16px;
+    }
+    &__select{
+
+    }
     & + .observation-card{
         margin-top: 16px;
     }

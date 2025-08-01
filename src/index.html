@@ -145,57 +145,90 @@
 	</div>
 
 	<div class="poiPopup" id="poiPopup" style="left: 1014px; top: 97px;width:450px">
-			<div class="head">
-				<span class="tit fontBd ft18">좌표 선택</span>
-				<i class="ico_close" onclick="$('#poiPopup').removeClass('on');$('#poiPopup').css('display','none');measureEntityRemoveById('undefined')"></i>
-			</div>
-			<div class="con">
-				<div class="tab-section">
-					<div class="tab-group" role="tablist" aria-label="관측소 또는 관측부이 선택">
-						<button type="button" class="tab-group__tab tab-group__tab--selected" role="tab" aria-selected="true" aria-controls="tab-panel-info01" id="infoTab01" tabindex="0">조위관측소</button>
-						<button type="button" class="tab-group__tab" role="tab" aria-selected="false" aria-controls="tab-panel-info02" id="infoTab02" tabindex="-1">해양관측부이</button>
-					</div>
+		<div class="head">
+			<span class="tit fontBd ft18">좌표 선택</span>
+			<i class="ico_close" onclick="$('#poiPopup').removeClass('on');$('#poiPopup').css('display','none');measureEntityRemoveById('undefined')"></i>
+		</div>
+		<div class="con">
+			<div class="tab-section">
+				<div class="tab-group" role="tablist" aria-label="관측소 또는 관측부이 선택">
+					<button type="button" class="tab-group__tab tab-group__tab--selected" role="tab" aria-selected="true" aria-controls="tab-panel-info01" id="infoTab01" tabindex="0">조위관측소</button>
+					<button type="button" class="tab-group__tab" role="tab" aria-selected="false" aria-controls="tab-panel-info02" id="infoTab02" tabindex="-1">해양관측부이</button>
+				</div>
 
-					<div id="tab-panel-info01" role="tabpanel" aria-labelledby="infoTab01">
-						<div class="grid-input">
-							<div class="grid-input-item">
-								<strong>위도</strong>
-								<div class="grid-input-group">
-									<input type="text" class="form-input" placeholder="위도" title="위도">
-								</div>
-							</div>
-							<div class="grid-input-item">
-								<strong>경도</strong>
-								<div class="grid-input-group">
-									<input type="text" class="form-input" placeholder="경도" title="경도">
-								</div>
-							</div>
-							<div class="grid-input-item">
-								<strong>위도(DMS)</strong>
-								<div class="grid-input-group">
-									<input type="text" class="form-input" placeholder="위도" title="위도">
-									<span class="unit">N</span>
-								</div>
-							</div>
-							<div class="grid-input-item">
-								<strong>경도(DMS)</strong>
-								<div class="grid-input-group">
-									<input type="text" class="form-input" placeholder="경도" title="경도">
-									<span class="unit">E</span>
-								</div>
+				<div id="tab-panel-info01" role="tabpanel" aria-labelledby="infoTab01">
+					<div class="grid-input">
+						<div class="grid-input-item">
+							<strong>위도</strong>
+							<div class="grid-input-group">
+								<input type="text" class="form-input" placeholder="위도" title="위도">
 							</div>
 						</div>
-						<div class="action-fab">
-							<button class="btn secondary">초기화</button>
-							<button class="btn primary">측정</button>
+						<div class="grid-input-item">
+							<strong>경도</strong>
+							<div class="grid-input-group">
+								<input type="text" class="form-input" placeholder="경도" title="경도">
+							</div>
+						</div>
+						<div class="grid-input-item">
+							<strong>위도(DMS)</strong>
+							<div class="grid-input-group">
+								<input type="text" class="form-input" placeholder="위도" title="위도">
+								<span class="unit">N</span>
+							</div>
+						</div>
+						<div class="grid-input-item">
+							<strong>경도(DMS)</strong>
+							<div class="grid-input-group">
+								<input type="text" class="form-input" placeholder="경도" title="경도">
+								<span class="unit">E</span>
+							</div>
 						</div>
 					</div>
-					<div id="tab-panel-info02" role="tabpanel" aria-labelledby="infoTab02" hidden="">
-						222
+					<div class="action-fab">
+						<button class="btn secondary">초기화</button>
+						<button class="btn primary">측정</button>
 					</div>
+				</div>
+				<div id="tab-panel-info02" role="tabpanel" aria-labelledby="infoTab02" hidden="">
+					222
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="observation-info-card" role="region" aria-labelledby="station-name" tabindex="0">
+		<img src="./assets/images/panel/card-temp.png" alt="부산 조의관측소 전경" class="observation-image" />
+		<button type="buttob" class="observation-close"><img src="./assets/images/panel/ico-close.svg" alt="닫기 버튼" class="observation-image" /></button>
+		<div class="observation-info-inner">
+			<div class="observation-info-head">
+				<div class="observation-info-ti">
+					<span class="badge" aria-hidden="true" style="background-color: #a68eff;">관측소</span>
+					<h2 class="station-title" id="station-name">부산 조의관측소</h2>
+				</div>
+				<p class="station-address">부산광역시 중구 남포동 1가</p>
+			</div>
+			<div class="observation-info-con">
+				<dl class="station-info">
+					<dt>관측 시작일</dt>
+					<dd>1956-01-01</dd>
+				</dl>
+				<dl class="station-info">
+					<dt>위도 / 경도</dt>
+					<dd>35.09638 / 129.03527</dd>
+				</dl>
+				<dl class="station-info">
+					<dt>관측 항목</dt>
+					<dd>조위, 수온, 염분, 기온, 기압, 풍향, 풍속</dd>
+				</dl>
+				<dl class="station-info">
+					<dt>관측 단위</dt>
+					<dd>1분</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+
 
 	<script type="module" src="./js/main.js"></script>
 	<script>

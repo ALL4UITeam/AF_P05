@@ -10,78 +10,182 @@
     transition: all .5s;
 }
 // 아이콘 mixin 정의
-@mixin icon-style($icon-url, $width: 2.7rem, $height: 2.7rem) {
-    -webkit-mask-image: url($icon-url);
+@mixin icon-style($icon-url, $width: 2.4rem, $height: 2.4rem) {
+    background-image: url($icon-url);
     mask-image: url($icon-url);
     width: $width;
     height: $height;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .ico-guide{
-    @include icon-style('@/assets/images/icon/ico-guide.svg', 24px, 24px);
-    background-color: #196DFF;
+    @include icon-style('@/assets/images/icon/ico-guide.svg', 32px, 32px);
 }
 .ico-zoom-in{
-    @include icon-style('@/assets/images/icon/ico-zoom-in.svg', 24px, 24px);
-    background-color: #555555;
+    @include icon-style('@/assets/images/icon/ico-zoom-in.svg', 32px, 32px);
 }
 .ico-zoom-out{
-    @include icon-style('@/assets/images/icon/ico-zoom-out.svg', 24px, 24px);
-    background-color: #555555;
+    @include icon-style('@/assets/images/icon/ico-zoom-out.svg', 32px, 32px);
 }
 .ico-distance{
-    @include icon-style('@/assets/images/icon/ico-distance.svg', 24px, 24px);
-    background-color: #555555;
+    @include icon-style('@/assets/images/icon/ico-distance.svg', 32px, 32px);
 }
 .ico-area{
-    @include icon-style('@/assets/images/icon/ico-area.svg', 24px, 24px);
-    background-color: #555555;
+    @include icon-style('@/assets/images/icon/ico-area.svg', 32px, 32px);
 }
-
 .ico-height{
-    @include icon-style('@/assets/images/icon/ico-height.svg', 24px, 24px);
-    background-color: #555555;
+    @include icon-style('@/assets/images/icon/ico-height.svg', 32px, 32px);
 }
-.ico-area2{
-    @include icon-style('@/assets/images/icon/ico-area2.svg', 24px, 24px);
-    background-color: #555555;
+.ico-crossSection{
+    @include icon-style('@/assets/images/icon/ico-crossSection.svg', 32px, 32px);
 }
-.ico-measurement{
-    @include icon-style('@/assets/images/icon/ico-measurement.svg', 24px, 24px);
-    background-color: #555555;
+.ico-volume{
+    @include icon-style('@/assets/images/icon/ico-volume.svg', 32px, 32px);
 }
-.ico-sea1{
-    @include icon-style('@/assets/images/icon/ico-sea1.svg', 24px, 24px);
-    background-color: #555555;
+.ico-depth{
+    @include icon-style('@/assets/images/icon/ico-depth.svg', 32px, 32px);
 }
-.ico-sea2{
-    @include icon-style('@/assets/images/icon/ico-sea2.svg', 24px, 24px);
-    background-color: #555555;
+.ico-tideDiffRatio{
+    @include icon-style('@/assets/images/icon/ico-tideDiffRatio.svg', 32px, 32px);
 }
-.ico-tide{
-    @include icon-style('@/assets/images/icon/ico-tide.svg', 24px, 24px);
-    background-color: #555555;
+.ico-depthOver{
+    @include icon-style('@/assets/images/icon/ico-depthOver.svg', 32px, 32px);
 }
-.ico-coordinate{
-    @include icon-style('@/assets/images/icon/ico-coordinate.svg', 24px, 24px);
-    background-color: #555555;
+.ico-location{
+    @include icon-style('@/assets/images/icon/ico-location.svg', 32px, 32px);
 }
-.ico-screen-save{
-    @include icon-style('@/assets/images/icon/ico-screen-save.svg', 24px, 24px);
-    background-color: #555555;
+.ico-save{
+    @include icon-style('@/assets/images/icon/ico-save.svg', 32px, 32px);
 }
 .ico-print{
-    @include icon-style('@/assets/images/icon/ico-print.svg', 24px, 24px);
-    background-color: #555555;
+    @include icon-style('@/assets/images/icon/ico-print.svg', 32px, 32px);
 }
 
+// active
+.btn-control-popup{
+  &.active,
+  &:hover{
+    background-color: #196DFF !important;
+    .ico-guide{
+      @include icon-style('@/assets/images/icon/ico-guide-on.svg', 32px, 32px);
+    }
+  }
+} 
+.zoom-in-btn{
+  &.active,
+  &:hover{
+    .ico-zoom-in{
+      @include icon-style('@/assets/images/icon/ico-zoom-in-on.svg', 32px, 32px);
+    }
+  }
+}
+.zoom-out-btn{
+  &.active,
+  &:hover{
+    .ico-zoom-out{
+      @include icon-style('@/assets/images/icon/ico-zoom-out-on.svg', 32px, 32px);
+    }
+  }
+}
+.distance-btn{
+  &.active,
+  &:hover{
+    .ico-distance{
+        @include icon-style('@/assets/images/icon/ico-distance-on.svg', 32px, 32px);
+    }
+  }
+}
+.area-btn{
+  &.active,
+  &:hover{
+    .ico-area{
+        @include icon-style('@/assets/images/icon/ico-area-on.svg', 32px, 32px);
+    }
+  }
+}
+.height-btn{
+  &.active,
+  &:hover{
+    .ico-height{
+        @include icon-style('@/assets/images/icon/ico-height-on.svg', 32px, 32px);
+    }
+  }
+}
+.crossSection-btn{
+  &.active,
+  &:hover{
+    .ico-crossSection{
+        @include icon-style('@/assets/images/icon/ico-crossSection-on.svg', 32px, 32px);
+    }
+  }
+}
+.volume-btn{
+  &.active,
+  &:hover{
+    .ico-volume{
+        @include icon-style('@/assets/images/icon/ico-volume-on.svg', 32px, 32px);
+    }
+  }
+}
+.depth-btn{
+  &.active,
+  &:hover{
+    .ico-depth{
+        @include icon-style('@/assets/images/icon/ico-depth-on.svg', 32px, 32px);
+    }
+  }
+}
+.tideDiffRatio-btn{
+  &.active,
+  &:hover{
+    .ico-tideDiffRatio{
+        @include icon-style('@/assets/images/icon/ico-tideDiffRatio-on.svg', 32px, 32px);
+    }
+  }
+}
+.depthOver-btn{
+  &.active,
+  &:hover{
+    .ico-depthOver{
+        @include icon-style('@/assets/images/icon/ico-depthOver-on.svg', 32px, 32px);
+    }
+  }
+}
+.location-btn{
+  &.active,
+  &:hover{
+    .ico-location{
+        @include icon-style('@/assets/images/icon/ico-location-on.svg', 32px, 32px);
+    }
+  }
+}
+.save-btn{
+  &.active,
+  &:hover{
+    .ico-save{
+        @include icon-style('@/assets/images/icon/ico-save-on.svg', 32px, 32px);
+    }
+  }
+}
+.print-btn{
+  &.active,
+  &:hover{
+    .ico-print{
+        @include icon-style('@/assets/images/icon/ico-print-on.svg', 32px, 32px);
+    }
+  }
+}
+
+
+
+
+
 .ico-arrow{
-    @include icon-style('@/assets/images/icon/ico-arrow.svg', 24px, 24px);
-    background-color: #C6C6C6;
+    @include icon-style('@/assets/images/icon/ico-arrow.svg', 32px, 32px);
 }
 .ico-info{
     @include icon-style('@/assets/images/icon/ico-info.svg', 14px, 14px);
-    background-color: #C6C6C6;
 }
 
 $layer-icons-a: (
