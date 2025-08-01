@@ -229,6 +229,84 @@
 		</div>
 	</div>
 
+	<!-- 분석 중 -->
+	<div class="analyze-loading-container" style="display: none;">
+		<div class="analyze-loading-content">
+		<div class="analyze-loading-title" id="analyzeText">
+			분석중...
+		</div>
+		<div class="analyze-loading">
+			<span style="--i:1;"></span>
+			<span style="--i:2;"></span>
+			<span style="--i:3;"></span>
+			<span style="--i:4;"></span>
+			<span style="--i:5"></span>
+			<span style="--i:6;"></span>
+			<span style="--i:7;"></span>
+		</div>
+		<svg>
+			<filter id="gooey">
+				<fegaussianblur in="sourcegraphic" stdDeviation="10"/> 
+				<fecolormatrix values="
+							1 0 0 0 0
+							1 1 0 0 0
+							1 0 1 0 0
+							1 0 0 20 -10
+				"/>
+			</filter>
+		</svg>
+		</div>
+	</div>
+	<!-- // 분석 중 끝 -->
+
+	<div id="loaderWave">
+		<div class="circle">
+			<div class="wave" id="wave">
+			</div>
+			<div class="text" id="loaderText">로딩 중</div>
+		</div>
+	  </div>
+	<!-- // loader 끝 -->
+
+
+	<script type="module" src="./js/main.js"></script>
+	<script>
+		// 분석중 텍스트 애니메이션
+		const analyzeText = document.getElementById("analyzeText");
+		const baseTextAnalyze = "분석중";
+		let dotCountAnalyze = 0;
+
+		setInterval(() => {
+		dotCountAnalyze = (dotCountAnalyze + 1) % 5;
+		analyzeText.textContent = baseTextAnalyze + ".".repeat(dotCountAnalyze);
+		}, 400);
+
+
+		// 로딩 퍼센트 및 점 애니메이션
+		const loaderText = document.getElementById("loaderText");
+		const wave = document.getElementById("wave");
+		const baseTextLoader = "로딩 중";
+		let dotCountLoader = 0;
+		let percent = 0;
+
+		// 퍼센트 올라가는 로딩 wave 애니메이션
+		const waveInterval = setInterval(() => {
+		if (percent < 100) {
+			percent++;
+			const y = -10 - percent * 0.4; // -10% → -50%
+			wave.style.transform = `translate(0%, ${y}%)`;
+		}
+		}, 300);
+
+		// 로딩 중... 점 애니메이션
+		const dotInterval = setInterval(() => {
+		dotCountLoader = (dotCountLoader + 1) % 4;
+		loaderText.textContent = baseTextLoader + ".".repeat(dotCountLoader);
+		}, 500);
+		
+	  </script>
+	  
+
 
 	<script type="module" src="./js/main.js"></script>
 	<script>
