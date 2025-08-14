@@ -1008,7 +1008,12 @@ body {
     line-height: 1.5;
     cursor: pointer;
     transition: background 0.2s;
-    
+    &:hover{
+        background: #002B51;
+    }
+    &.active{
+        background: #002B51;
+    }
 }
 
 .panel--cont__item__ti,
@@ -1033,7 +1038,7 @@ body {
     width: 45px;
     height: 20px;
     border-radius: 10px;
-    background-color: #E8E8E8;
+    background-color: #C6C6C6;
     input{
         position: absolute;
         left: 0;
@@ -1068,7 +1073,7 @@ body {
         top: 5px;
         content:'보기';
         font-size: 9px;
-        color:#222;
+        color:#fff;
     }
 }
 
@@ -1782,10 +1787,14 @@ body{
     }
     .observation-info-inner {
         .observation-info-head{
+            display: flex;
+            justify-content: space-between;
+            gap:20px;
             padding: 20px;
             .observation-info-ti{
                 display: flex;
-                align-items: center;
+                align-items: flex-start;
+                flex-direction: column;
                 gap:12px;
                 margin-bottom: 8px;
                 .badge {
@@ -1877,7 +1886,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 22px 8px;
     &__bg{
         position: relative;
         width: 100%;
@@ -1898,6 +1907,7 @@ body{
         border-radius: 12px;
         transition: height 0.1s ease;
         z-index: 1;
+        min-height: 5%;
         img {
             position: absolute;
             top: 0;
@@ -1924,17 +1934,17 @@ body{
     &__labels {
         position: absolute;
         bottom: 16px;
-        top:16px;
+        top:0;
         left: 50%;
         width: calc(100% - 16px);
-        height: calc(100% - 16px);
+        height: calc(100% - 0px);
         transform: translateX(-50%);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         z-index: 3;
         pointer-events: none;
-        padding: 30px 0;
+        padding: 2px 0;
         .wave-range__label {
             position: relative;
             background: white;
@@ -1944,20 +1954,37 @@ body{
             border-radius: 12px;
             font-size: 8px;
             color: #333;
-            margin-left: 12px;
+            margin-left: 16px;
             display: inline-block;
-            &:after{
-                position: absolute;
-                left: -8px;
-                top: 7px;
-                display: block;
-                width: 6px;
-                height: 2px;
-                background: #fff;
-                content:'';
-            }
+            border: 1px solid #dedede;
+            // &:after{
+            //     position: absolute;
+            //     left: -8px;
+            //     top: 7px;
+            //     display: block;
+            //     width: 6px;
+            //     height: 1px;
+            //     background: #dedede;
+            //     content:'';
+            // }
+            // &:before{
+            //     position: absolute;
+            //     right: -10px;
+            //     top: 7px;
+            //     display: block;
+            //     width: 6px;
+            //     height: 1px;
+            //     background: #dedede;
+            //     content:'';
+            // }
             &--top {
                 align-self: flex-start;
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
             }
             &--center {
                 align-self: flex-start;
@@ -1966,155 +1993,89 @@ body{
             }
             &--bottom {
                 align-self: flex-start;
+                &:after{
+                    display: none;
+                }
+                &:before{
+                    display: none;
+                }
             }
         }
     }
 }
 
 
-
-.analyze-loading-container{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 100000;
-    background-color: rgba(0,0,0,0.8);
-    width: 100vw;
-    height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg{
-        width:0;
-        height:0;
-    }
-    .analyze-loading 
-    {
-        position:relative;
-        width:200px;
-        height:200px;
-        filter:url(#gooey);
-    }
-    .analyze-loading span
-    {
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        display:block;
-        animation:animate 4s ease-in-out infinite;
-        animation-delay:calc(0.2s * var(--i));
-    }
-    .analyze-loading span:before
-    {
-        content:'';
-        position:absolute;
-        top:0;
-        left:calc(50% - 1.2rem);
-        width:30px;
-        height:30px;
-        border-radius:50%;
-        box-shadow:0 0 30px #196DFF;
-        background:linear-gradient(#fce4ec,#196DFF);
-    }
-    @keyframes animate
-    {
-        0%
-        {
-            transform:rotate(0deg);
-        }
-        50%,100%
-        {
-            transform:rotate(360deg);
-        }
-    }
+.smallPopup-inner{
+    width: 140px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px 0px;
+    box-sizing: border-box;
+    background-clip: padding-box;
+    transform: translate(15px, 0px);
+}
+.smallPopup-ul {
+    font-size: 12px;
+    line-height: 15px;
 }
 
-.analyze-loading-title{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.8rem;
-    font-family: 'ChosunGu';
-    font-weight: 700;
+.smallPopup-ul li .name {
+    float: left;
+}
+.smallPopup-ul li .value {
+    display: block;
+    overflow: hidden;
+    text-align: right;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.smallPopup-ul li .value span.distance {
+    color: #1877ff;
 }
 
-
-
-
-@keyframes animate-wave{
-    0%{
-        transform: translate(-50%, -75%) rotate(0deg);
-    }
-    100%{
-        transform: translate(-50%, -75%) rotate(360deg);
-    }
+.smallPopup-ul li .value span {
+    font-weight: 600;
+}
+.smallPopup-bnLtGE{
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    color: rgb(51, 51, 51);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.smallPopup-eraser{
+    margin-top: 10px;
+    width: 100%;
+    padding: 9px 0px;
+    border-radius: 18px;
+    border: 1px solid rgb(229, 229, 229);
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(51, 51, 51);
+    letter-spacing: -0.3px;
+}
+.smallPopup-eraser::before {
+    overflow: hidden;
+    display: inline-block;
+    font-size: 1px;
+    line-height: 1px;
+    color: transparent;
+    vertical-align: top;
+    background-image: url(@/assets/images/icon/ico-eraser.svg);
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    mask-image: none;
+    margin-right: 4px;
+    content: "";
 }
 
-#loaderWave{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100dvh;
-    background-color: rgba(0,0,0,0.8);
-    z-index: 100000;
-    .circle{
-        position: absolute;
-        top:50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 150px;
-        height: 150px;
-        background: #ccc;
-        border: 5px solid #4973ff;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-    .wave{
-        position: relative;
-        width: 200%;
-        height: 200%;
-        background: #4973ff;
-        transform: translate(-10%, 0%);
-        transition: transform 0.2s ease;
-        /* box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); */
-    }
-    #loaderText{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: #fff;
-        z-index: 10;
-        text-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-    }
-    .wave:before,
-    .wave:after
-    {
-        content: '';
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -75%);
-    }
-    .wave:before{
-        border-radius: 45%;
-        background: rgba(255, 255, 255, 1);
-        animation: animate 5s linear infinite;
-    }
-    .wave:after{
-        border-radius: 40%;
-        background: rgba(255, 255, 255, .5);
-        animation: animate-wave 10s linear infinite;
-    }
-    
+.observation-etc__checkbox{
+    width: 20px;
+    height: 30px;
 }
-
-
-
