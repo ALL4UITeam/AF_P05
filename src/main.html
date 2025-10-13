@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>3차원 해양공간 정보</title>
+	<link rel="stylesheet" as="style" crossorigin
+		href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./lib/simplebar/simplebar.css">
+    <link rel="stylesheet" href="./lib/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./lib/slick/slick-image-compare.css">
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+	<script src="./lib/swiper/swiper-bundle.min.js"></script>
+	<script src="./lib/simplebar/simplebar.min.js"></script>
+    <script src="./lib/slick/slick-image-compare.umd.js"></script>
+</head>
+
+<body>
+    <div class="app-main">
+        <div class="gov-banner">
+            <div class="container">
+                <img src="./assets/images/main/ico-flag.png" alt="대한민국 국기">
+                <span>이 누리집은 대한민국 공식 전자정부 누리집입니다.</span>
+            </div>
+        </div>
+        <header id="header" class="header">
+            <div class="container">
+                <h1 class="logo"><a href="#"><img src="./assets/images/main/logo.png" alt="로고"></a></h1>
+            </div>
+        </header>
+        <div id="visual" class="visual">
+            <div class="visual--tabs">
+                <div class="container" role="tablist">
+                    <button type="button" role="tab" aria-selected="true" aria-selected="true" aria-controls="visualtab01" class="tab-item active" data-tab="visualtab01" tabindex="0"><i class="icon ti01"></i>해양공간정보 뷰어</button>
+                    <button type="button" role="tab" aria-selected="true" aria-selected="false" aria-controls="visualtab02" class="tab-item" data-tab="visualtab02" tabindex="-1"><i class="icon ti02"></i>3차원 객체 모델링 제공</button>
+                    <button type="button" role="tab" aria-selected="true" aria-selected="false" aria-controls="visualtab03" class="tab-item" data-tab="visualtab03" tabindex="-1"><i class="icon ti03"></i>해수면 변화 시뮬레이션</button>
+                    <button type="button" role="tab" aria-selected="true" aria-selected="false" aria-controls="visualtab04" class="tab-item" data-tab="visualtab04" tabindex="-1"><i class="icon ti04"></i>준설량 모의 계산</button>
+                    <button type="button" role="tab" aria-selected="true" aria-selected="false" aria-controls="visualtab05" class="tab-item" data-tab="visualtab05" tabindex="-1"><i class="icon ti05"></i>기타 서비스 안내</button>
+                </div>
+            </div>
+            <div id="visualtab01" class="visual-cont active" role="tabpanel" aria-labelledby="visualtab01">
+                <div class="container">
+                    <div class="visual--info">
+                        <h3>3차원 해양공간정보 뷰어</h3>
+                        <p>육상지형과 해저지형을 연결한 3차원 공간정보를 제공합니다.</p>
+                        <a href="" class="Link">서비스 바로가기</a>
+                    </div>
+                    <div class="visual--link">
+                        <p>디지털 트윈으로 구축된 지역을<br> 직접 확인해 보세요</p>
+                        <ul>
+                            <li><a href="">부산지역</a></li>
+                            <li><a href="">거제/통영 지역</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="visualtab02" class="visual-cont" role="tabpanel" aria-labelledby="visualtab02">
+                <div class="container">
+                    <div class="visual--info">
+                        <h3>3차원 객체정보 제작</h3>
+                        <p>실제 도면을 기반으로 제작한 교량/교량지주</p>
+                        <a href="" class="Link">서비스 바로가기</a>
+                    </div>
+                    <div class="visual--slide">
+                        <div class="swiper vi-Swiper">
+                            <div class="swiper-wrapper">
+                                <!-- 관측소 -->
+                                <div class="swiper-slide">
+                                    <div class="slide-box">
+                                        <h2>관측소</h2>
+                                        <img src="./assets/images/main/slide01.png" alt="관측소" />
+                                        <p class="slide-number">01</p>
+                                    </div>
+                                </div>
+                        
+                                <!-- 관측 장비 -->
+                                <div class="swiper-slide">
+                                    <div class="slide-box">
+                                        <h2>교량모델</h2>
+                                        <img src="./assets/images/main/slide02.png" alt="관측 장비" />
+                                        <p class="slide-number">02</p>
+                                    </div>
+                                </div>
+
+                                <!-- 등대 -->
+                                <div class="swiper-slide">
+                                    <div class="slide-box">
+                                        <h2>등대</h2>
+                                        <img src="./assets/images/main/slide03.png" alt="등대" />
+                                        <p class="slide-number">03</p>
+                                    </div>
+                                </div>
+
+                                <!-- 철탑 -->
+                                <div class="swiper-slide">
+                                    <div class="slide-box">
+                                        <h2>철탑</h2>
+                                        <img src="./assets/images/main/slide04.png" alt="철탑" />
+                                        <p class="slide-number">04</p>
+                                    </div>
+                                </div>
+                                <!-- 침선 -->
+                                <div class="swiper-slide">
+                                    <div class="slide-box">
+                                        <h2>침선</h2>
+                                        <img src="./assets/images/main/slide05.png" alt="침선" />
+                                        <p class="slide-number">05</p>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="pagination-bar">
+                                <div class="page-prev">1</div>
+                                <div class="progress-container">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="page-next">5</div>
+                            </div>
+                        
+                            <div class="swiper-nav">
+                                <div class="swiper-custom-prev"></div>
+                                <div class="swiper-custom-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="visualtab03" class="visual-cont" aria-labelledby="visualtab03">
+                <div class="container">
+                    <div class="visual--info">
+                        <h3>해수면 변화 시뮬레이션</h3>
+                        <p>조위에 따른 해수면 변화를 다양한 기능을 통해서 확인할 수 있습니다.</p>
+                        <a href="" class="Link">서비스 바로가기</a>
+                    </div>
+                    <div class="visual--link">
+                        <p>조위에 따른 해수면 변화를 다양한<br> 기능을 통해서 확인할 수 있습니다</p>
+                        <ul>
+                            <li><a href="">관측소 예측 조위</a></li>
+                            <li><a href="">고조/저조 확인</a></li>
+                            <li><a href="">임의 조위 해수면</a></li>
+                            <li><a href="">수위 예측선</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="visualtab04" class="visual-cont" role="tabpanel" aria-labelledby="visualtab04">
+                <div class="visual--comparison">
+                    <div class="visual--comparison__inner">
+                        <div id="my-div">
+                            <img src="./assets/images/main/comparison-before.png" alt="before">
+                            <img src="./assets/images/main/comparison-after.png" alt="after">
+                        </div>
+                    </div>
+                    <div class="visual-info-inner">
+                        <div class="container">
+                            <div class="visual--info">
+                                <h3>준설량 모의 계산</h3>
+                                <p>수로정비, 계획수심 확보 등 항만의 일정한<br> 수심 유지를 위한 가상의 준설 시뮬레이션</p>
+                                <a href="" class="Link">서비스 바로가기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div id="visualtab05" class="visual-cont" role="tabpanel" aria-labelledby="visualtab05">
+                <div class="container">
+                    <div class="visual--info">
+                        <h3>해수면 변화 시뮬레이션</h3>
+                        <p>조위에 따른 해수면 변화를 다양한 기능을 통해서 확인할 수 있습니다.</p>
+                        <div class="link-inner">
+                            <a href="" class="Link">선박운항 서비스</a>
+                            <a href="" class="Link">해안 침수 예상도</a>
+                            <a href="" class="Link">조간대 재질 표현</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="build-info">
+            <div class="container">
+                <h3 class="section__title">구축정보</h3>
+                <div class="build-info__list">
+                    <!-- 카드 1 -->
+                    <div class="build-info__item">
+                        <a href="#" class="build-info__thumb">
+                            <img src="./assets/images/main/build-info01.png" alt="부산 일대 전경">
+                        </a>
+                        <div class="build-info__content">
+                            <h3 class="build-info__heading">
+                                부산 일대 <span class="build-info__area">(3,170km²)</span>
+                            </h3>
+                            <ul class="build-info__meta">
+                                <li><span class="label">자료 생성일</span><time>2024.06.04</time></li>
+                                <li><span class="label">정사영상</span><time>2024.00.00</time></li>
+                                <li><span class="label">3차원 객체</span><time>2024.00.00</time></li>
+                                <li><span class="label">DEM</span><time>2024.00.00</time></li>
+                                <li><span class="label">재질분포</span><time>2024.00.00</time></li>
+                            </ul>
+                            <div class="build-info__cta">
+                                <a href="#">구축정보 바로가기<i class="icon arrow"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 카드 2 -->
+                    <div class="build-info__item">
+                        <a href="#" class="build-info__thumb">
+                            <img src="./assets/images/main/build-info02.png" alt="거제/통영 일대 전경">
+                        </a>
+                        <div class="build-info__content">
+                            <h3 class="build-info__heading">
+                                거제/통영 일대 <span class="build-info__area">(3,170km²)</span>
+                            </h3>
+                            <ul class="build-info__meta">
+                                <li><span class="label">자료 생성일</span><time>2024.06.04</time></li>
+                                <li><span class="label">정사영상</span><time>2024.00.00</time></li>
+                                <li><span class="label">3차원 객체</span><time>2024.00.00</time></li>
+                                <li><span class="label">DEM</span><time>2024.00.00</time></li>
+                                <li><span class="label">재질분포</span><time>2024.00.00</time></li>
+                            </ul>
+                            <div class="build-info__cta">
+                                <a href="#">구축정보 바로가기<i class="icon arrow"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="major-function">
+            <div class="container">
+                <h3 class="section__title">주요 측정 기능</h3>
+                <ul class="function--list">
+                    <li class="function--list__item">
+                        <i class="icon i01"></i>
+                        <h4>단면 측정</h4>
+                        <p>선택한 두 지점 사이의 지형 단면과 조위를 표출</p>
+                    </li>
+                    <li class="function--list__item"> 
+                        <i class="icon i02"></i>
+                        <h4>체적 측정</h4>
+                        <p>선택한 영역의 체적(부피)를 계산</p>
+                    </li>
+                    <li class="function--list__item">
+                        <i class="icon i03"></i>
+                        <h4>수심 측정</h4>
+                        <p>선택 지점의 현재 조위값을 반영한 수심</p>
+                    </li>
+                    <li class="function--list__item">
+                        <i class="icon i04"></i>
+                        <h4>조시차/조고비</h4>
+                        <p>선택한 정점의 조시차/조고비 정보 제공</p>
+                    </li>
+                    <li class="function--list__item">
+                        <i class="icon i05"></i>
+                        <h4>선박 통과 높이 측정</h4>
+                        <p>선택한 위치의 해수면에서 교량까지 높이 측정</p>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div id="footer" class="footer">
+            <div class="container">
+                <h2 class="foot-logo"><img src="./assets/images/main/foot-logo.png" alt="하단 로고"></h2>
+                <address>
+                    <div>(49111) 부산광역시 영도구 해양로 351 (동삼동 1162)</div>
+                    <div><strong>대표전화:</strong> <a href="tel:051-400-4400">051-400-4400</a> <strong>FAX:</strong> 051-400-4191 </div> 
+                </address>
+                <p class="copy">© Ministry of the Interior and Safety. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // 탭이 보일 때 Swiper를 업데이트하고 autoplay 재시작 등 처리
+        function onTabShown() {
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    try {
+                        if (typeof swiper !== 'undefined' && swiper) {
+                            if (typeof swiper.update === 'function') swiper.update();
+                            if (swiper.params && swiper.params.autoplay && swiper.autoplay) {
+                                swiper.autoplay.start();
+                            }
+                        }
+                    } catch (e) {
+                        console.warn('Swiper update error:', e);
+                    }
+                    window.dispatchEvent(new Event('resize'));
+                }, 50);
+            });
+        }
+
+        // 메인 탭
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab-item");
+            const panels = document.querySelectorAll(".visual-cont");
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener("click", () => {
+                    const target = tab.getAttribute("aria-controls");
+
+                    // 모든 탭 초기화
+                    tabs.forEach(t => {
+                        t.classList.remove("active");
+                        t.setAttribute("aria-selected", "false");
+                        t.setAttribute("tabindex", "-1");
+                    });
+
+                    // 현재 탭 활성화
+                    tab.classList.add("active");
+                    tab.setAttribute("aria-selected", "true");
+                    tab.setAttribute("tabindex", "0");
+                    tab.focus(); // 포커스는 탭에 남음
+
+                    // 패널 초기화
+                    panels.forEach(panel => {
+                        panel.classList.remove("active");
+                        panel.setAttribute("hidden", "true");
+                    });
+
+                    // 선택된 패널 활성화
+                    const activePanel = document.getElementById(target);
+                    if (activePanel) {
+                        activePanel.classList.add("active");
+                        activePanel.removeAttribute("hidden");
+                    }
+                    requestAnimationFrame(() => {
+                        setTimeout(onTabShown, 50);
+                    });
+                });
+
+                // 화살표 키로 탭 이동 가능하게
+                tab.addEventListener("keydown", (e) => {
+                    let newIndex;
+                    if (e.key === "ArrowRight") {
+                        newIndex = (index + 1) % tabs.length;
+                        tabs[newIndex].focus();
+                    } else if (e.key === "ArrowLeft") {
+                        newIndex = (index - 1 + tabs.length) % tabs.length;
+                        tabs[newIndex].focus();
+                    }
+                });
+            });
+        });
+
+        // 3차원 객체 모델링 제공 슬라이더
+        var swiper = new Swiper(".vi-Swiper", {
+            loop: true,
+            effect: 'fade',
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: ".swiper-custom-next",
+                prevEl: ".swiper-custom-prev",
+            },
+            on: {
+                init: function () {
+                    updatePagination(this);
+                },
+                slideChange: function () {
+                    updatePagination(this);
+                },
+                autoplayTimeLeft(s, time, progress) {
+                    const bar = document.querySelector(".progress-bar");
+                    if (bar) bar.style.width = (1 - progress) * 100 + "%";
+                },
+            },
+        });
+
+        function updatePagination(swiper) {
+            const prevEl = document.querySelector(".page-prev");
+            const nextEl = document.querySelector(".page-next");
+            if (prevEl) prevEl.textContent = (swiper.realIndex || 0) + 1;
+            if (nextEl) nextEl.textContent = swiper.snapGrid ? swiper.snapGrid.length : 0;
+        }
+
+        // SlickImageCompare 
+        const sic = new SlickImageCompare('#my-div');
+
+        window.addEventListener('load', () => {
+            onTabShown();
+        });
+
+    </script>
+	<script type="module" src="./js/front.js"></script>
+    
+</body>
+
+</html>
