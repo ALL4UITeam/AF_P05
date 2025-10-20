@@ -139,10 +139,30 @@
                     <div class="visual--link">
                         <p>조위에 따른 해수면 변화를 다양한<br> 기능을 통해서 확인할 수 있습니다</p>
                         <ul>
-                            <li><a href="">관측소 예측 조위</a></li>
-                            <li><a href="">고조/저조 확인</a></li>
-                            <li><a href="">임의 조위 해수면</a></li>
-                            <li><a href="">수위 예측선</a></li>
+                            <li>
+                                <button class="mode-btn is-active" aria-pressed="true" data-text="조위에 따른 해수면 변화를 다양한 기능을 통해서 확인할 수 있습니다"
+                                    data-img="/assets/images/main/visual03.png">
+                                    관측소 예측 조위
+                                </button>
+                            </li>
+                            <li>
+                                <button class="mode-btn" aria-pressed="false" data-text="고조/저조 확인."
+                                    data-img="./assets/images/main/visual01.png">
+                                    고조/저조 확인
+                                </button>
+                            </li>
+                            <li>
+                                <button class="mode-btn" aria-pressed="false" data-text="임의 조위 해수면"
+                                    data-img="./assets/images/main/visual02.png">
+                                    임의 조위 해수면
+                                </button>
+                            </li>
+                            <li>
+                                <button class="mode-btn" aria-pressed="false" data-text="수위 예측선"
+                                    data-img="./assets/images/main/visual05.png">
+                                    수위 예측선
+                                </button>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -165,8 +185,6 @@
                         </div>
                     </div>
                 </div>
-                
-                
             </div>
             <div id="visualtab05" class="visual-cont" role="tabpanel" aria-labelledby="visualtab05">
                 <div class="container">
@@ -174,9 +192,12 @@
                         <h3>해수면 변화 시뮬레이션</h3>
                         <p>조위에 따른 해수면 변화를 다양한 기능을 통해서 확인할 수 있습니다.</p>
                         <div class="link-inner">
-                            <a href="" class="Link">선박운항 서비스</a>
-                            <a href="" class="Link">해안 침수 예상도</a>
-                            <a href="" class="Link">조간대 재질 표현</a>
+                            <button class="Link is-active" aria-pressed="true" data-text="선박운항 서비스"
+                                data-img="/assets/images/main/visual05.png">선박운항 서비스</button>
+                            <button class="Link" aria-pressed="false" data-text="해안 침수 예상도"
+                                data-img="/assets/images/main/visual01.png">해안 침수 예상도</button>
+                            <button class="Link" aria-pressed="false" data-text="조간대 재질 표현"
+                                data-img="/assets/images/main/visual02.png">조간대 재질 표현</button>
                         </div>
                     </div>
                 </div>
@@ -389,6 +410,82 @@
         window.addEventListener('load', () => {
             onTabShown();
         });
+
+        // Main visual 기능 추가 
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.visual-cont[id^="visualtab"]').forEach(initVisualSection);
+
+            function initVisualSection(section) {
+                const desc = section.querySelector('.visual--info > p');
+                if (!desc) return;
+
+                const allButtons = Array.from(section.querySelectorAll(
+                    '.mode-btn, .visual--link button, .link-inner button, button[data-text], [data-visual-btn]'
+                )).filter(btn => btn.dataset && (btn.dataset.text || btn.dataset.img));
+
+                if (allButtons.length === 0) return;
+
+                // 이미지 프리로드
+                allButtons.forEach(btn => {
+                    const src = btn.dataset.img;
+                    if (src) { const i = new Image(); i.src = src; }
+                });
+
+                // 초기 활성 버튼
+                const initial = section.querySelector('.is-active') || allButtons[0];
+                if (initial) applyState(initial);
+
+                section.addEventListener('click', (e) => {
+                    const btn = e.target.closest('button');
+                    if (!btn || !section.contains(btn)) return;
+                    if (!allButtons.includes(btn)) return;
+                    applyState(btn);
+                    btn.focus();
+                });
+
+                // 키보드 접근성
+                allButtons.forEach((btn, idx) => {
+                    btn.setAttribute('role', 'button');
+                    if (!btn.hasAttribute('aria-pressed')) btn.setAttribute('aria-pressed', 'false');
+                    btn.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                            e.preventDefault();
+                            const dir = e.key === 'ArrowRight' ? 1 : -1;
+                            const next = allButtons[(idx + dir + allButtons.length) % allButtons.length];
+                            next.focus();
+                        }
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            applyState(btn);
+                        }
+                    });
+                });
+
+                function applyState(btn) {
+                    // 텍스트
+                    desc.textContent = btn.dataset.text || '';
+
+                    // 배경 이미지
+                    const img = btn.dataset.img;
+                    if (img) {
+                        section.style.filter = 'brightness(.97)';
+                        requestAnimationFrame(() => {
+                            section.style.backgroundImage = `url(${img})`;
+                            section.style.backgroundSize = 'cover';
+                            section.style.backgroundPosition = 'center';
+                            setTimeout(() => { section.style.filter = ''; }, 120);
+                        });
+                    }
+                    // 활성 토글
+                    allButtons.forEach(b => {
+                        const active = b === btn;
+                        b.classList.toggle('is-active', active);
+                        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+                    });
+                }
+            }
+        });
+        
 
     </script>
     

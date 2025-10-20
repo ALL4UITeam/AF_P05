@@ -1721,6 +1721,7 @@ textarea {
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 #visual .visual-cont.active {
   display: block;
@@ -1788,7 +1789,7 @@ textarea {
 .visual--link ul li:hover + li {
   border-top-color: transparent;
 }
-.visual--link ul li:hover a {
+.visual--link ul li:hover a, .visual--link ul li:hover button {
   border-radius: 12px;
   border: 1px solid rgb(25, 109, 255);
   background-color: rgba(25, 109, 255, 0.6);
@@ -1800,10 +1801,12 @@ textarea {
 .visual--link ul li:last-child:hover {
   border-bottom-color: transparent;
 }
-.visual--link ul li a {
+.visual--link ul li a, .visual--link ul li button {
   height: 100%;
   line-height: 72px;
   display: block;
+  width: 100%;
+  text-align: left;
   padding: 0 28px;
   color: #fff;
   text-decoration: none;

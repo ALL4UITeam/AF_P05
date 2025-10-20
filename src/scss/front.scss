@@ -125,6 +125,7 @@ textarea {
         height: 100%;
         background-position: center;
         background-repeat: no-repeat;
+        background-size: cover;
         &.active {
             display: block;
         }
@@ -189,7 +190,7 @@ textarea {
                 &:hover{
                     border-top-color: transparent;
                     & + li{border-top-color: transparent;}
-                    a{
+                    a,button{
                         border-radius: 12px;
                         border: 1px solid rgba(25,109,255,1);
                         background-color: rgba(25,109,255,.6);
@@ -202,10 +203,12 @@ textarea {
                         border-bottom-color: transparent;
                     }
                 }
-                a{
+                a, button{
                     height: 100%;
                     line-height: 72px;
                     display: block;
+                    width: 100%;
+                    text-align: left;
                     padding: 0 28px;
                     color:#fff;
                     text-decoration: none;
